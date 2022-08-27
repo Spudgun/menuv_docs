@@ -571,175 +571,4629 @@
     ]
   },
   {
-    "comment": "/**\r\n * CreateMenu options\r\n * \r\n * @access public\r\n * @memberof Menu\r\n * @typedef {object} Menu~options\r\n * \r\n * @param {string} [options.namespace=unknown]\r\n *        Namespace is required to set keybinds, make sure given namespace is unique for every menu.\r\n * @param {boolean|string} [options.title=MenuV]\r\n *        Title that appears on the big banner.\r\n * @param {string} [options.subtitle=\"\"]\r\n *        Subtitle that appears in capital letters in a small black bar.\r\n * @param {string} [options.position=\"topleft\"]\r\n *        Menu position on screen\r\n *         \r\n *         \r\n *        <strong>options:</strong> \r\n * \r\n *        `topleft` | `topcenter` | `topright` | `centerleft` | `center` | `centerright` | `bottomleft` | `bottomcenter` | `bottomright`\r\n * @param {number} [options.r=0]\r\n *        Primary color `RGB` red channel [0-255]\r\n * @param {number} [options.g=0]\r\n *        Primary color `RGB` green channel [0-255]\r\n * @param {number} [options.b=255]\r\n *        Primary color `RGB` blue channel [0-255]\r\n * @param {string} [options.size=size-110]\r\n *        Menu size in %\r\n * \r\n * \r\n *        <strong>options:</strong> \r\n * \r\n *        `size-100` | `size-110` | `size-125` | `size-150` | `size-175` | `size-200`\r\n * @param {string} [options.dictionary=menuv]\r\n *        Texture dictionary name for the banner image\r\n * @param {string} [options.texture=default]\r\n *        Texture name for the banner image\r\n * @param {table} [options.events={}]\r\n *        Custom events to add\r\n * @param {function} [options.validate=nil]\r\n *        Custom {@link #Menu.Validate|Menu.Validate} function\r\n * @param {function} [options.newIndex=nil]\r\n *             Custom {@link #Menu.NewIndex|Menu.NewIndex} function\r\n */",
+    "comment": "/**\r\n * Button item for MenuV\r\n * @class\r\n * @implements {Item}\r\n * @extends {Item}\r\n */",
     "meta": {
-      "filename": "menuv.js",
-      "lineno": 12,
+      "range": [
+        124,
+        738
+      ],
+      "filename": "button.js",
+      "lineno": 9,
       "columnno": 0,
-      "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src",
-      "code": {}
+      "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+      "code": {
+        "id": "astnode100000111",
+        "name": "ButtonItem",
+        "type": "ClassDeclaration",
+        "paramnames": []
+      }
     },
-    "description": "CreateMenu options",
-    "access": "public",
-    "memberof": "Menu",
-    "kind": "typedef",
-    "name": "options",
-    "type": {
-      "names": [
-        "object"
-      ]
+    "classdesc": "Button item for MenuV",
+    "kind": "class",
+    "implements": [
+      "Item"
+    ],
+    "augments": [
+      "Item"
+    ],
+    "name": "ButtonItem",
+    "longname": "ButtonItem",
+    "scope": "global",
+    "$longname": "ButtonItem",
+    "$kind": "class",
+    "$docmaLink": "api/#ButtonItem",
+    "$members": [
+      {
+        "comment": "/**\r\n * <strong>Type:</strong> `event`\r\n * \r\n * Event will be triggered when item becomes active/selected in NUI\r\n * @access public\r\n * @this Item\r\n * @event Item#enter\r\n * @param {Item} item Current active/selected item\r\n * @example\r\nitem:On('enter', function(item)\r\n    print('You have entered this item :)')\r\nend)\r\n */",
+        "meta": {
+          "filename": "item.js",
+          "lineno": 233,
+          "columnno": 0,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {}
+        },
+        "name": "enter",
+        "longname": "ButtonItem#event:enter",
+        "kind": "event",
+        "description": "<strong>Type:</strong> `event`\r\rEvent will be triggered when item becomes active/selected in NUI",
+        "access": "public",
+        "this": "Item",
+        "examples": [
+          "item:On('enter', function(item)\r\n    print('You have entered this item :)')\r\nend)"
+        ],
+        "memberof": "ButtonItem",
+        "scope": "instance",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "Item"
+              ]
+            },
+            "description": "Current active/selected item",
+            "name": "item"
+          }
+        ],
+        "inherits": "Item#event:enter",
+        "inherited": true,
+        "implements": [
+          "Item#event:enter"
+        ],
+        "$longname": "ButtonItem#event:enter",
+        "$kind": "event",
+        "$docmaLink": "api/#ButtonItem#event:enter"
+      },
+      {
+        "comment": "/**\r\n * <strong>Type:</strong> `event`\r\n * \r\n * Event will be triggered when item becomes inactive/unselected in NUI\r\n * @access public\r\n * @this Item\r\n * @event Item#leave\r\n * @param {Item} item Current inactive/unselected item\r\n * @example\r\nitem:On('leave', function(item)\r\n    print('You have unselected this item :(')\r\nend)\r\n */",
+        "meta": {
+          "filename": "item.js",
+          "lineno": 248,
+          "columnno": 0,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {}
+        },
+        "name": "leave",
+        "longname": "ButtonItem#event:leave",
+        "kind": "event",
+        "description": "<strong>Type:</strong> `event`\r\rEvent will be triggered when item becomes inactive/unselected in NUI",
+        "access": "public",
+        "this": "Item",
+        "examples": [
+          "item:On('leave', function(item)\r\n    print('You have unselected this item :(')\r\nend)"
+        ],
+        "memberof": "ButtonItem",
+        "scope": "instance",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "Item"
+              ]
+            },
+            "description": "Current inactive/unselected item",
+            "name": "item"
+          }
+        ],
+        "inherits": "Item#event:leave",
+        "inherited": true,
+        "implements": [
+          "Item#event:leave"
+        ],
+        "$longname": "ButtonItem#event:leave",
+        "$kind": "event",
+        "$docmaLink": "api/#ButtonItem#event:leave"
+      },
+      {
+        "comment": "/**\r\n * <strong>Type:</strong> `event`\r\n * \r\n * Event will be triggered when user pressed `ENTER` on item\r\n * @memberof ButtonItem\r\n * @access public\r\n * @this ButtonItem\r\n * @event ButtonItem#select\r\n * @param {ButtonItem} item Current selected item\r\n * @example\r\nitem:On('select', function(item)\r\n    print('You have updated this item :)')\r\nend)\r\n*/",
+        "meta": {
+          "filename": "button.js",
+          "lineno": 37,
+          "columnno": 0,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {}
+        },
+        "description": "<strong>Type:</strong> `event`\r\rEvent will be triggered when user pressed `ENTER` on item",
+        "memberof": "ButtonItem",
+        "access": "public",
+        "this": "ButtonItem",
+        "kind": "event",
+        "name": "select",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "ButtonItem"
+              ]
+            },
+            "description": "Current selected item",
+            "name": "item"
+          }
+        ],
+        "examples": [
+          "item:On('select', function(item)\r\n    print('You have updated this item :)')\r\nend)"
+        ],
+        "longname": "ButtonItem#event:select",
+        "scope": "instance",
+        "$longname": "ButtonItem#event:select",
+        "$kind": "event",
+        "$docmaLink": "api/#ButtonItem#event:select"
+      },
+      {
+        "comment": "/**\r\n * <strong>Type:</strong> `event`\r\n * \r\n * Event will be triggered when item's value changed\r\n * @access public\r\n * @this Item\r\n * @event Item#update\r\n * @param {Item} item Current updated item\r\n * @param {string} key Current updated key\r\n * @param {any} value Current updated value\r\n * @param {any} oldValue Previous value\r\n * @example\r\nitem:On('update', function(item, key, value, oldValue)\r\n    print('You have updated this item :)')\r\nend)\r\n */",
+        "meta": {
+          "filename": "item.js",
+          "lineno": 263,
+          "columnno": 0,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {}
+        },
+        "name": "update",
+        "longname": "ButtonItem#event:update",
+        "kind": "event",
+        "description": "<strong>Type:</strong> `event`\r\rEvent will be triggered when item's value changed",
+        "access": "public",
+        "this": "Item",
+        "examples": [
+          "item:On('update', function(item, key, value, oldValue)\r\n    print('You have updated this item :)')\r\nend)"
+        ],
+        "memberof": "ButtonItem",
+        "scope": "instance",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "Item"
+              ]
+            },
+            "description": "Current updated item",
+            "name": "item"
+          },
+          {
+            "type": {
+              "names": [
+                "string"
+              ]
+            },
+            "description": "Current updated key",
+            "name": "key"
+          },
+          {
+            "type": {
+              "names": [
+                "any"
+              ]
+            },
+            "description": "Current updated value",
+            "name": "value"
+          },
+          {
+            "type": {
+              "names": [
+                "any"
+              ]
+            },
+            "description": "Previous value",
+            "name": "oldValue"
+          }
+        ],
+        "inherits": "Item#event:update",
+        "inherited": true,
+        "implements": [
+          "Item#event:update"
+        ],
+        "$longname": "ButtonItem#event:update",
+        "$kind": "event",
+        "$docmaLink": "api/#ButtonItem#event:update"
+      }
+    ]
+  },
+  {
+    "comment": "/**\r\n * Checkbox item for MenuV\r\n * @class\r\n * @implements {Item}\r\n * @extends {Item}\r\n */",
+    "meta": {
+      "range": [
+        126,
+        999
+      ],
+      "filename": "checkbox.js",
+      "lineno": 9,
+      "columnno": 0,
+      "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+      "code": {
+        "id": "astnode100000140",
+        "name": "CheckboxItem",
+        "type": "ClassDeclaration",
+        "paramnames": []
+      }
     },
-    "params": [
+    "classdesc": "Checkbox item for MenuV",
+    "kind": "class",
+    "implements": [
+      "Item"
+    ],
+    "augments": [
+      "Item"
+    ],
+    "name": "CheckboxItem",
+    "longname": "CheckboxItem",
+    "scope": "global",
+    "$longname": "CheckboxItem",
+    "$kind": "class",
+    "$docmaLink": "api/#CheckboxItem",
+    "$members": [
       {
+        "comment": "/**\r\n     * <strong>Type:</strong> `boolean`\r\n     * \r\n     * Value of {@link #CheckboxItem|CheckboxItem}\r\n     * @memberof CheckboxItem\r\n     * @access public\r\n     * @type {boolean}\r\n     * @default false\r\n     */",
+        "meta": {
+          "range": [
+            982,
+            996
+          ],
+          "filename": "checkbox.js",
+          "lineno": 45,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {
+            "id": "astnode100000148",
+            "name": "Value",
+            "type": "ClassProperty"
+          }
+        },
+        "description": "<strong>Type:</strong> `boolean`\r\rValue of {@link #CheckboxItem|CheckboxItem}",
+        "memberof": "CheckboxItem",
+        "access": "public",
+        "type": {
+          "names": [
+            "boolean"
+          ]
+        },
+        "defaultvalue": "false",
+        "name": "Value",
+        "longname": "CheckboxItem.Value",
+        "kind": "member",
+        "scope": "static",
+        "$longname": "CheckboxItem.Value",
+        "$kind": "property",
+        "$docmaLink": "api/#CheckboxItem.Value"
+      },
+      {
+        "comment": "/**\r\n * <strong>Type:</strong> `event`\r\n * \r\n * Event will be triggered when user changed checkbox state\r\n * @memberof CheckboxItem\r\n * @access public\r\n * @this CheckboxItem\r\n * @event CheckboxItem#change\r\n * @param {CheckboxItem} item Current changed checkbox item\r\n * @param {boolean} newValue New state of checkbox\r\n * @param {boolean} oldValue Previous state of checkbox\r\n * @example\r\nitem:On('change', function(item, newValue, oldValue)\r\n    print('You have changed them checkbox state :)')\r\nend)\r\n */",
+        "meta": {
+          "filename": "checkbox.js",
+          "lineno": 48,
+          "columnno": 0,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {}
+        },
+        "description": "<strong>Type:</strong> `event`\r\rEvent will be triggered when user changed checkbox state",
+        "memberof": "CheckboxItem",
+        "access": "public",
+        "this": "CheckboxItem",
+        "kind": "event",
+        "name": "change",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "CheckboxItem"
+              ]
+            },
+            "description": "Current changed checkbox item",
+            "name": "item"
+          },
+          {
+            "type": {
+              "names": [
+                "boolean"
+              ]
+            },
+            "description": "New state of checkbox",
+            "name": "newValue"
+          },
+          {
+            "type": {
+              "names": [
+                "boolean"
+              ]
+            },
+            "description": "Previous state of checkbox",
+            "name": "oldValue"
+          }
+        ],
+        "examples": [
+          "item:On('change', function(item, newValue, oldValue)\r\n    print('You have changed them checkbox state :)')\r\nend)"
+        ],
+        "longname": "CheckboxItem#event:change",
+        "scope": "instance",
+        "$longname": "CheckboxItem#event:change",
+        "$kind": "event",
+        "$docmaLink": "api/#CheckboxItem#event:change"
+      },
+      {
+        "comment": "/**\r\n * <strong>Type:</strong> `event`\r\n * \r\n * Event will be triggered when user check the checkbox\r\n * @memberof CheckboxItem\r\n * @access public\r\n * @this CheckboxItem\r\n * @event CheckboxItem#check\r\n * @param {CheckboxItem} item Current checked checkbox item\r\n * @example\r\nitem:On('check', function(item)\r\n    print('You have set the checkbox state to checked :D')\r\nend)\r\n */",
+        "meta": {
+          "filename": "checkbox.js",
+          "lineno": 66,
+          "columnno": 0,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {}
+        },
+        "description": "<strong>Type:</strong> `event`\r\rEvent will be triggered when user check the checkbox",
+        "memberof": "CheckboxItem",
+        "access": "public",
+        "this": "CheckboxItem",
+        "kind": "event",
+        "name": "check",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "CheckboxItem"
+              ]
+            },
+            "description": "Current checked checkbox item",
+            "name": "item"
+          }
+        ],
+        "examples": [
+          "item:On('check', function(item)\r\n    print('You have set the checkbox state to checked :D')\r\nend)"
+        ],
+        "longname": "CheckboxItem#event:check",
+        "scope": "instance",
+        "$longname": "CheckboxItem#event:check",
+        "$kind": "event",
+        "$docmaLink": "api/#CheckboxItem#event:check"
+      },
+      {
+        "comment": "/**\r\n * <strong>Type:</strong> `event`\r\n * \r\n * Event will be triggered when item becomes active/selected in NUI\r\n * @access public\r\n * @this Item\r\n * @event Item#enter\r\n * @param {Item} item Current active/selected item\r\n * @example\r\nitem:On('enter', function(item)\r\n    print('You have entered this item :)')\r\nend)\r\n */",
+        "meta": {
+          "filename": "item.js",
+          "lineno": 233,
+          "columnno": 0,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {}
+        },
+        "name": "enter",
+        "longname": "CheckboxItem#event:enter",
+        "kind": "event",
+        "description": "<strong>Type:</strong> `event`\r\rEvent will be triggered when item becomes active/selected in NUI",
+        "access": "public",
+        "this": "Item",
+        "examples": [
+          "item:On('enter', function(item)\r\n    print('You have entered this item :)')\r\nend)"
+        ],
+        "memberof": "CheckboxItem",
+        "scope": "instance",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "Item"
+              ]
+            },
+            "description": "Current active/selected item",
+            "name": "item"
+          }
+        ],
+        "inherits": "Item#event:enter",
+        "inherited": true,
+        "implements": [
+          "Item#event:enter"
+        ],
+        "$longname": "CheckboxItem#event:enter",
+        "$kind": "event",
+        "$docmaLink": "api/#CheckboxItem#event:enter"
+      },
+      {
+        "comment": "/**\r\n * <strong>Type:</strong> `event`\r\n * \r\n * Event will be triggered when item becomes inactive/unselected in NUI\r\n * @access public\r\n * @this Item\r\n * @event Item#leave\r\n * @param {Item} item Current inactive/unselected item\r\n * @example\r\nitem:On('leave', function(item)\r\n    print('You have unselected this item :(')\r\nend)\r\n */",
+        "meta": {
+          "filename": "item.js",
+          "lineno": 248,
+          "columnno": 0,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {}
+        },
+        "name": "leave",
+        "longname": "CheckboxItem#event:leave",
+        "kind": "event",
+        "description": "<strong>Type:</strong> `event`\r\rEvent will be triggered when item becomes inactive/unselected in NUI",
+        "access": "public",
+        "this": "Item",
+        "examples": [
+          "item:On('leave', function(item)\r\n    print('You have unselected this item :(')\r\nend)"
+        ],
+        "memberof": "CheckboxItem",
+        "scope": "instance",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "Item"
+              ]
+            },
+            "description": "Current inactive/unselected item",
+            "name": "item"
+          }
+        ],
+        "inherits": "Item#event:leave",
+        "inherited": true,
+        "implements": [
+          "Item#event:leave"
+        ],
+        "$longname": "CheckboxItem#event:leave",
+        "$kind": "event",
+        "$docmaLink": "api/#CheckboxItem#event:leave"
+      },
+      {
+        "comment": "/**\r\n * <strong>Type:</strong> `event`\r\n * \r\n * Event will be triggered when user uncheck the checkbox\r\n * @memberof CheckboxItem\r\n * @access public\r\n * @this CheckboxItem\r\n * @event CheckboxItem#uncheck\r\n * @param {CheckboxItem} item Current unchecked checkbox item\r\n * @example\r\nitem:On('uncheck', function(item)\r\n    print('You have set the checkbox state to unchecked :(')\r\nend)\r\n */",
+        "meta": {
+          "filename": "checkbox.js",
+          "lineno": 82,
+          "columnno": 0,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {}
+        },
+        "description": "<strong>Type:</strong> `event`\r\rEvent will be triggered when user uncheck the checkbox",
+        "memberof": "CheckboxItem",
+        "access": "public",
+        "this": "CheckboxItem",
+        "kind": "event",
+        "name": "uncheck",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "CheckboxItem"
+              ]
+            },
+            "description": "Current unchecked checkbox item",
+            "name": "item"
+          }
+        ],
+        "examples": [
+          "item:On('uncheck', function(item)\r\n    print('You have set the checkbox state to unchecked :(')\r\nend)"
+        ],
+        "longname": "CheckboxItem#event:uncheck",
+        "scope": "instance",
+        "$longname": "CheckboxItem#event:uncheck",
+        "$kind": "event",
+        "$docmaLink": "api/#CheckboxItem#event:uncheck"
+      },
+      {
+        "comment": "/**\r\n * <strong>Type:</strong> `event`\r\n * \r\n * Event will be triggered when item's value changed\r\n * @access public\r\n * @this Item\r\n * @event Item#update\r\n * @param {Item} item Current updated item\r\n * @param {string} key Current updated key\r\n * @param {any} value Current updated value\r\n * @param {any} oldValue Previous value\r\n * @example\r\nitem:On('update', function(item, key, value, oldValue)\r\n    print('You have updated this item :)')\r\nend)\r\n */",
+        "meta": {
+          "filename": "item.js",
+          "lineno": 263,
+          "columnno": 0,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {}
+        },
+        "name": "update",
+        "longname": "CheckboxItem#event:update",
+        "kind": "event",
+        "description": "<strong>Type:</strong> `event`\r\rEvent will be triggered when item's value changed",
+        "access": "public",
+        "this": "Item",
+        "examples": [
+          "item:On('update', function(item, key, value, oldValue)\r\n    print('You have updated this item :)')\r\nend)"
+        ],
+        "memberof": "CheckboxItem",
+        "scope": "instance",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "Item"
+              ]
+            },
+            "description": "Current updated item",
+            "name": "item"
+          },
+          {
+            "type": {
+              "names": [
+                "string"
+              ]
+            },
+            "description": "Current updated key",
+            "name": "key"
+          },
+          {
+            "type": {
+              "names": [
+                "any"
+              ]
+            },
+            "description": "Current updated value",
+            "name": "value"
+          },
+          {
+            "type": {
+              "names": [
+                "any"
+              ]
+            },
+            "description": "Previous value",
+            "name": "oldValue"
+          }
+        ],
+        "inherits": "Item#event:update",
+        "inherited": true,
+        "implements": [
+          "Item#event:update"
+        ],
+        "$longname": "CheckboxItem#event:update",
+        "$kind": "event",
+        "$docmaLink": "api/#CheckboxItem#event:update"
+      }
+    ]
+  },
+  {
+    "comment": "/**\r\n * Confirm item for MenuV\r\n * @class\r\n * @implements {Item}\r\n * @extends {Item}\r\n */",
+    "meta": {
+      "range": [
+        125,
+        1381
+      ],
+      "filename": "confirm.js",
+      "lineno": 9,
+      "columnno": 0,
+      "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+      "code": {
+        "id": "astnode100000193",
+        "name": "ConfirmItem",
+        "type": "ClassDeclaration",
+        "paramnames": []
+      }
+    },
+    "classdesc": "Confirm item for MenuV",
+    "kind": "class",
+    "implements": [
+      "Item"
+    ],
+    "augments": [
+      "Item"
+    ],
+    "name": "ConfirmItem",
+    "longname": "ConfirmItem",
+    "scope": "global",
+    "$longname": "ConfirmItem",
+    "$kind": "class",
+    "$docmaLink": "api/#ConfirmItem",
+    "$members": [
+      {
+        "comment": "/**\r\n     * <strong>Type:</strong> `function`\r\n     * \r\n     * Confirm this item, set confirm state to `true`\r\n     * @memberof ConfirmItem\r\n     * @access public\r\n     */",
+        "meta": {
+          "range": [
+            1172,
+            1184
+          ],
+          "filename": "confirm.js",
+          "lineno": 54,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {
+            "id": "astnode100000203",
+            "name": "ConfirmItem#Confirm",
+            "type": "MethodDefinition",
+            "paramnames": []
+          },
+          "vars": {
+            "": null
+          }
+        },
+        "description": "<strong>Type:</strong> `function`\r\rConfirm this item, set confirm state to `true`",
+        "memberof": "ConfirmItem",
+        "access": "public",
+        "name": "Confirm",
+        "longname": "ConfirmItem#Confirm",
+        "kind": "function",
+        "scope": "instance",
+        "params": [],
+        "$longname": "ConfirmItem#Confirm",
+        "$kind": "method",
+        "$docmaLink": "api/#ConfirmItem#Confirm"
+      },
+      {
+        "comment": "/**\r\n     * <strong>Type:</strong> `function`\r\n     * \r\n     * Deny this item, set confirm state to `false`\r\n     * @memberof ConfirmItem\r\n     * @access public\r\n     */",
+        "meta": {
+          "range": [
+            1368,
+            1377
+          ],
+          "filename": "confirm.js",
+          "lineno": 63,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {
+            "id": "astnode100000207",
+            "name": "ConfirmItem#Deny",
+            "type": "MethodDefinition",
+            "paramnames": []
+          },
+          "vars": {
+            "": null
+          }
+        },
+        "description": "<strong>Type:</strong> `function`\r\rDeny this item, set confirm state to `false`",
+        "memberof": "ConfirmItem",
+        "access": "public",
+        "name": "Deny",
+        "longname": "ConfirmItem#Deny",
+        "kind": "function",
+        "scope": "instance",
+        "params": [],
+        "$longname": "ConfirmItem#Deny",
+        "$kind": "method",
+        "$docmaLink": "api/#ConfirmItem#Deny"
+      },
+      {
+        "comment": "/**\r\n     * <strong>Type:</strong> `boolean`\r\n     * \r\n     * Value of {@link #ConfirmItem|ConfirmItem}\r\n     * @memberof ConfirmItem\r\n     * @access public\r\n     * @type {boolean}\r\n     * @default false\r\n     */",
+        "meta": {
+          "range": [
+            973,
+            987
+          ],
+          "filename": "confirm.js",
+          "lineno": 45,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {
+            "id": "astnode100000201",
+            "name": "Value",
+            "type": "ClassProperty"
+          }
+        },
+        "description": "<strong>Type:</strong> `boolean`\r\rValue of {@link #ConfirmItem|ConfirmItem}",
+        "memberof": "ConfirmItem",
+        "access": "public",
+        "type": {
+          "names": [
+            "boolean"
+          ]
+        },
+        "defaultvalue": "false",
+        "name": "Value",
+        "longname": "ConfirmItem.Value",
+        "kind": "member",
+        "scope": "static",
+        "$longname": "ConfirmItem.Value",
+        "$kind": "property",
+        "$docmaLink": "api/#ConfirmItem.Value"
+      },
+      {
+        "comment": "/**\r\n * <strong>Type:</strong> `event`\r\n * \r\n * Event will be triggered when user changed confirm state\r\n * @memberof ConfirmItem\r\n * @access public\r\n * @this ConfirmItem\r\n * @event ConfirmItem#change\r\n * @param {ConfirmItem} item Current changed confirm item\r\n * @param {boolean} newValue New state of confirm\r\n * @param {boolean} oldValue Previous state of confirm\r\n * @example\r\nitem:On('change', function(item, newValue, oldValue)\r\n    print('You have changed them confirm state :)')\r\nend)\r\n */",
+        "meta": {
+          "filename": "confirm.js",
+          "lineno": 66,
+          "columnno": 0,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {}
+        },
+        "description": "<strong>Type:</strong> `event`\r\rEvent will be triggered when user changed confirm state",
+        "memberof": "ConfirmItem",
+        "access": "public",
+        "this": "ConfirmItem",
+        "kind": "event",
+        "name": "change",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "ConfirmItem"
+              ]
+            },
+            "description": "Current changed confirm item",
+            "name": "item"
+          },
+          {
+            "type": {
+              "names": [
+                "boolean"
+              ]
+            },
+            "description": "New state of confirm",
+            "name": "newValue"
+          },
+          {
+            "type": {
+              "names": [
+                "boolean"
+              ]
+            },
+            "description": "Previous state of confirm",
+            "name": "oldValue"
+          }
+        ],
+        "examples": [
+          "item:On('change', function(item, newValue, oldValue)\r\n    print('You have changed them confirm state :)')\r\nend)"
+        ],
+        "longname": "ConfirmItem#event:change",
+        "scope": "instance",
+        "$longname": "ConfirmItem#event:change",
+        "$kind": "event",
+        "$docmaLink": "api/#ConfirmItem#event:change"
+      },
+      {
+        "comment": "/**\r\n * <strong>Type:</strong> `event`\r\n * \r\n * Event will be triggered when user confirm the {@link #ConfirmItem|ConfirmItem}\r\n * @memberof ConfirmItem\r\n * @access public\r\n * @this ConfirmItem\r\n * @event ConfirmItem#confirm\r\n * @param {ConfirmItem} item Current confirmed confirm item\r\n * @example\r\nitem:On('confirm', function(item)\r\n    print('You have confirmed the confirm item :D')\r\nend)\r\n */",
+        "meta": {
+          "filename": "confirm.js",
+          "lineno": 84,
+          "columnno": 0,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {}
+        },
+        "description": "<strong>Type:</strong> `event`\r\rEvent will be triggered when user confirm the {@link #ConfirmItem|ConfirmItem}",
+        "memberof": "ConfirmItem",
+        "access": "public",
+        "this": "ConfirmItem",
+        "kind": "event",
+        "name": "confirm",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "ConfirmItem"
+              ]
+            },
+            "description": "Current confirmed confirm item",
+            "name": "item"
+          }
+        ],
+        "examples": [
+          "item:On('confirm', function(item)\r\n    print('You have confirmed the confirm item :D')\r\nend)"
+        ],
+        "longname": "ConfirmItem#event:confirm",
+        "scope": "instance",
+        "$longname": "ConfirmItem#event:confirm",
+        "$kind": "event",
+        "$docmaLink": "api/#ConfirmItem#event:confirm"
+      },
+      {
+        "comment": "/**\r\n * <strong>Type:</strong> `event`\r\n * \r\n * Event will be triggered when user denied the {@link #ConfirmItem|ConfirmItem}\r\n * @memberof ConfirmItem\r\n * @access public\r\n * @this ConfirmItem\r\n * @event ConfirmItem#deny\r\n * @param {ConfirmItem} item Current denied confirm item\r\n * @example\r\nitem:On('deny', function(item)\r\n    print('You have denied the confirm item :D')\r\nend)\r\n */",
+        "meta": {
+          "filename": "confirm.js",
+          "lineno": 100,
+          "columnno": 0,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {}
+        },
+        "description": "<strong>Type:</strong> `event`\r\rEvent will be triggered when user denied the {@link #ConfirmItem|ConfirmItem}",
+        "memberof": "ConfirmItem",
+        "access": "public",
+        "this": "ConfirmItem",
+        "kind": "event",
+        "name": "deny",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "ConfirmItem"
+              ]
+            },
+            "description": "Current denied confirm item",
+            "name": "item"
+          }
+        ],
+        "examples": [
+          "item:On('deny', function(item)\r\n    print('You have denied the confirm item :D')\r\nend)"
+        ],
+        "longname": "ConfirmItem#event:deny",
+        "scope": "instance",
+        "$longname": "ConfirmItem#event:deny",
+        "$kind": "event",
+        "$docmaLink": "api/#ConfirmItem#event:deny"
+      },
+      {
+        "comment": "/**\r\n * <strong>Type:</strong> `event`\r\n * \r\n * Event will be triggered when item becomes active/selected in NUI\r\n * @access public\r\n * @this Item\r\n * @event Item#enter\r\n * @param {Item} item Current active/selected item\r\n * @example\r\nitem:On('enter', function(item)\r\n    print('You have entered this item :)')\r\nend)\r\n */",
+        "meta": {
+          "filename": "item.js",
+          "lineno": 233,
+          "columnno": 0,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {}
+        },
+        "name": "enter",
+        "longname": "ConfirmItem#event:enter",
+        "kind": "event",
+        "description": "<strong>Type:</strong> `event`\r\rEvent will be triggered when item becomes active/selected in NUI",
+        "access": "public",
+        "this": "Item",
+        "examples": [
+          "item:On('enter', function(item)\r\n    print('You have entered this item :)')\r\nend)"
+        ],
+        "memberof": "ConfirmItem",
+        "scope": "instance",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "Item"
+              ]
+            },
+            "description": "Current active/selected item",
+            "name": "item"
+          }
+        ],
+        "inherits": "Item#event:enter",
+        "inherited": true,
+        "implements": [
+          "Item#event:enter"
+        ],
+        "$longname": "ConfirmItem#event:enter",
+        "$kind": "event",
+        "$docmaLink": "api/#ConfirmItem#event:enter"
+      },
+      {
+        "comment": "/**\r\n * <strong>Type:</strong> `event`\r\n * \r\n * Event will be triggered when item becomes inactive/unselected in NUI\r\n * @access public\r\n * @this Item\r\n * @event Item#leave\r\n * @param {Item} item Current inactive/unselected item\r\n * @example\r\nitem:On('leave', function(item)\r\n    print('You have unselected this item :(')\r\nend)\r\n */",
+        "meta": {
+          "filename": "item.js",
+          "lineno": 248,
+          "columnno": 0,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {}
+        },
+        "name": "leave",
+        "longname": "ConfirmItem#event:leave",
+        "kind": "event",
+        "description": "<strong>Type:</strong> `event`\r\rEvent will be triggered when item becomes inactive/unselected in NUI",
+        "access": "public",
+        "this": "Item",
+        "examples": [
+          "item:On('leave', function(item)\r\n    print('You have unselected this item :(')\r\nend)"
+        ],
+        "memberof": "ConfirmItem",
+        "scope": "instance",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "Item"
+              ]
+            },
+            "description": "Current inactive/unselected item",
+            "name": "item"
+          }
+        ],
+        "inherits": "Item#event:leave",
+        "inherited": true,
+        "implements": [
+          "Item#event:leave"
+        ],
+        "$longname": "ConfirmItem#event:leave",
+        "$kind": "event",
+        "$docmaLink": "api/#ConfirmItem#event:leave"
+      },
+      {
+        "comment": "/**\r\n * <strong>Type:</strong> `event`\r\n * \r\n * Event will be triggered when item's value changed\r\n * @access public\r\n * @this Item\r\n * @event Item#update\r\n * @param {Item} item Current updated item\r\n * @param {string} key Current updated key\r\n * @param {any} value Current updated value\r\n * @param {any} oldValue Previous value\r\n * @example\r\nitem:On('update', function(item, key, value, oldValue)\r\n    print('You have updated this item :)')\r\nend)\r\n */",
+        "meta": {
+          "filename": "item.js",
+          "lineno": 263,
+          "columnno": 0,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {}
+        },
+        "name": "update",
+        "longname": "ConfirmItem#event:update",
+        "kind": "event",
+        "description": "<strong>Type:</strong> `event`\r\rEvent will be triggered when item's value changed",
+        "access": "public",
+        "this": "Item",
+        "examples": [
+          "item:On('update', function(item, key, value, oldValue)\r\n    print('You have updated this item :)')\r\nend)"
+        ],
+        "memberof": "ConfirmItem",
+        "scope": "instance",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "Item"
+              ]
+            },
+            "description": "Current updated item",
+            "name": "item"
+          },
+          {
+            "type": {
+              "names": [
+                "string"
+              ]
+            },
+            "description": "Current updated key",
+            "name": "key"
+          },
+          {
+            "type": {
+              "names": [
+                "any"
+              ]
+            },
+            "description": "Current updated value",
+            "name": "value"
+          },
+          {
+            "type": {
+              "names": [
+                "any"
+              ]
+            },
+            "description": "Previous value",
+            "name": "oldValue"
+          }
+        ],
+        "inherits": "Item#event:update",
+        "inherited": true,
+        "implements": [
+          "Item#event:update"
+        ],
+        "$longname": "ConfirmItem#event:update",
+        "$kind": "event",
+        "$docmaLink": "api/#ConfirmItem#event:update"
+      }
+    ]
+  },
+  {
+    "comment": "/**\r\n * Item for MenuV\r\n * @class\r\n */",
+    "meta": {
+      "range": [
+        40,
+        5547
+      ],
+      "filename": "item.js",
+      "lineno": 5,
+      "columnno": 0,
+      "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+      "code": {
+        "id": "astnode100000250",
+        "name": "Item",
+        "type": "ClassDeclaration",
+        "paramnames": []
+      }
+    },
+    "classdesc": "Item for MenuV",
+    "kind": "class",
+    "name": "Item",
+    "longname": "Item",
+    "scope": "global",
+    "$longname": "Item",
+    "$kind": "class",
+    "$docmaLink": "api/#Item",
+    "$members": [
+      {
+        "comment": "/**\r\n     * <strong>Type:</strong> `function`\r\n     * \r\n     * Returns the {@link #Menu|Menu} where item is added to (Parent Menu)\r\n     * @memberof Item\r\n     * @access public\r\n     * @this Item\r\n     * @param {Item} item {@link #Item|Item} to get parent menu from\r\n     * @returns {Menu} Parent's menu\r\n     */",
+        "meta": {
+          "range": [
+            5521,
+            5543
+          ],
+          "filename": "item.js",
+          "lineno": 230,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {
+            "id": "astnode100000318",
+            "name": "Item#GetParentMenu",
+            "type": "MethodDefinition",
+            "paramnames": [
+              "item"
+            ]
+          },
+          "vars": {
+            "": null
+          }
+        },
+        "description": "<strong>Type:</strong> `function`\r\rReturns the {@link #Menu|Menu} where item is added to (Parent Menu)",
+        "memberof": "Item",
+        "access": "public",
+        "this": "Item",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "Item"
+              ]
+            },
+            "description": "{@link #Item|Item} to get parent menu from",
+            "name": "item"
+          }
+        ],
+        "returns": [
+          {
+            "type": {
+              "names": [
+                "Menu"
+              ]
+            },
+            "description": "Parent's menu"
+          }
+        ],
+        "name": "GetParentMenu",
+        "longname": "Item#GetParentMenu",
+        "kind": "function",
+        "scope": "instance",
+        "$longname": "Item#GetParentMenu",
+        "$kind": "method",
+        "$docmaLink": "api/#Item#GetParentMenu"
+      },
+      {
+        "comment": "/**\r\n     * <strong>Type:</strong> `function`\r\n     * \r\n     * Get current item's value with some validation, see {@link #Item.Value|Item.Value}\r\n     * @memberof Item\r\n     * @access public\r\n     * @this Item\r\n     * @param {Item} item {@link #Item|Item} to get value from\r\n     * @returns {any|nil} Return current valid value or `nil`\r\n     */",
+        "meta": {
+          "range": [
+            5177,
+            5194
+          ],
+          "filename": "item.js",
+          "lineno": 218,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {
+            "id": "astnode100000313",
+            "name": "Item#GetValue",
+            "type": "MethodDefinition",
+            "paramnames": [
+              "item"
+            ]
+          },
+          "vars": {
+            "": null
+          }
+        },
+        "description": "<strong>Type:</strong> `function`\r\rGet current item's value with some validation, see {@link #Item.Value|Item.Value}",
+        "memberof": "Item",
+        "access": "public",
+        "this": "Item",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "Item"
+              ]
+            },
+            "description": "{@link #Item|Item} to get value from",
+            "name": "item"
+          }
+        ],
+        "returns": [
+          {
+            "type": {
+              "names": [
+                "any",
+                "nil"
+              ]
+            },
+            "description": "Return current valid value or `nil`"
+          }
+        ],
+        "name": "GetValue",
+        "longname": "Item#GetValue",
+        "kind": "function",
+        "scope": "instance",
+        "$longname": "Item#GetValue",
+        "$kind": "method",
+        "$docmaLink": "api/#Item#GetValue"
+      },
+      {
+        "comment": "/**\r\n     * <strong>Type:</strong> `function`\r\n     * \r\n     * Register a function as `on` event trigger\r\n     * @memberof Item\r\n     * @access public\r\n     * @this Item\r\n     * @param {Item} item {@link #Item|Item} to register function for\r\n     * @param {string} event Name of `on` event to trigger\r\n     * @param {function} func Function to trigger\r\n     */",
+        "meta": {
+          "range": [
+            3533,
+            3557
+          ],
+          "filename": "item.js",
+          "lineno": 165,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {
+            "id": "astnode100000285",
+            "name": "Item#On",
+            "type": "MethodDefinition",
+            "paramnames": [
+              "item",
+              "event",
+              "func"
+            ]
+          },
+          "vars": {
+            "": null
+          }
+        },
+        "description": "<strong>Type:</strong> `function`\r\rRegister a function as `on` event trigger",
+        "memberof": "Item",
+        "access": "public",
+        "this": "Item",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "Item"
+              ]
+            },
+            "description": "{@link #Item|Item} to register function for",
+            "name": "item"
+          },
+          {
+            "type": {
+              "names": [
+                "string"
+              ]
+            },
+            "description": "Name of `on` event to trigger",
+            "name": "event"
+          },
+          {
+            "type": {
+              "names": [
+                "function"
+              ]
+            },
+            "description": "Function to trigger",
+            "name": "func"
+          }
+        ],
+        "name": "On",
+        "longname": "Item#On",
+        "kind": "function",
+        "scope": "instance",
+        "$longname": "Item#On",
+        "$kind": "method",
+        "$docmaLink": "api/#Item#On"
+      },
+      {
+        "comment": "/**\r\n     * <strong>Type:</strong> `string`\r\n     * \r\n     * Description of menu item\r\n     * @memberof Item\r\n     * @access public\r\n     * @type {string}\r\n     * @default ''\r\n     */",
+        "meta": {
+          "range": [
+            1854,
+            1871
+          ],
+          "filename": "item.js",
+          "lineno": 95,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {
+            "id": "astnode100000267",
+            "name": "Description",
+            "type": "ClassProperty"
+          }
+        },
+        "description": "<strong>Type:</strong> `string`\r\rDescription of menu item",
+        "memberof": "Item",
+        "access": "public",
         "type": {
           "names": [
             "string"
           ]
         },
-        "optional": true,
-        "defaultvalue": "unknown",
-        "description": "Namespace is required to set keybinds, make sure given namespace is unique for every menu.",
-        "name": "options.namespace"
+        "defaultvalue": "''",
+        "name": "Description",
+        "longname": "Item.Description",
+        "kind": "member",
+        "scope": "static",
+        "$longname": "Item.Description",
+        "$kind": "property",
+        "$docmaLink": "api/#Item.Description"
       },
       {
+        "comment": "/**\r\n     * <strong>Type:</strong> `boolean`\r\n     * \r\n     * `Disabled` state of menu item\r\n     * @memberof Item\r\n     * @access public\r\n     * @type {boolean}\r\n     * @default ''\r\n     */",
+        "meta": {
+          "range": [
+            2273,
+            2290
+          ],
+          "filename": "item.js",
+          "lineno": 117,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {
+            "id": "astnode100000271",
+            "name": "Disabled",
+            "type": "ClassProperty"
+          }
+        },
+        "description": "<strong>Type:</strong> `boolean`\r\r`Disabled` state of menu item",
+        "memberof": "Item",
+        "access": "public",
         "type": {
           "names": [
-            "boolean",
-            "string"
+            "boolean"
           ]
         },
-        "optional": true,
-        "defaultvalue": "MenuV",
-        "description": "Title that appears on the big banner.",
-        "name": "options.title"
+        "defaultvalue": "''",
+        "name": "Disabled",
+        "longname": "Item.Disabled",
+        "kind": "member",
+        "scope": "static",
+        "$longname": "Item.Disabled",
+        "$kind": "property",
+        "$docmaLink": "api/#Item.Disabled"
       },
       {
-        "type": {
-          "names": [
-            "string"
-          ]
+        "comment": "/**\r\n     * <strong>Type:</strong> `string`\r\n     * \r\n     * Icon of menu item\r\n     * @memberof Item\r\n     * @access public\r\n     * @type {string}\r\n     * @default 'none'\r\n     */",
+        "meta": {
+          "range": [
+            1441,
+            1455
+          ],
+          "filename": "item.js",
+          "lineno": 73,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {
+            "id": "astnode100000263",
+            "name": "Icon",
+            "type": "ClassProperty"
+          }
         },
-        "optional": true,
-        "defaultvalue": "\"\"",
-        "description": "Subtitle that appears in capital letters in a small black bar.",
-        "name": "options.subtitle"
-      },
-      {
-        "type": {
-          "names": [
-            "string"
-          ]
-        },
-        "optional": true,
-        "defaultvalue": "\"topleft\"",
-        "description": "Menu position on screen\r        \r        \r       <strong>options:</strong> \r\r       `topleft` | `topcenter` | `topright` | `centerleft` | `center` | `centerright` | `bottomleft` | `bottomcenter` | `bottomright`",
-        "name": "options.position"
-      },
-      {
-        "type": {
-          "names": [
-            "number"
-          ]
-        },
-        "optional": true,
-        "defaultvalue": 0,
-        "description": "Primary color `RGB` red channel [0-255]",
-        "name": "options.r"
-      },
-      {
-        "type": {
-          "names": [
-            "number"
-          ]
-        },
-        "optional": true,
-        "defaultvalue": 0,
-        "description": "Primary color `RGB` green channel [0-255]",
-        "name": "options.g"
-      },
-      {
-        "type": {
-          "names": [
-            "number"
-          ]
-        },
-        "optional": true,
-        "defaultvalue": 255,
-        "description": "Primary color `RGB` blue channel [0-255]",
-        "name": "options.b"
-      },
-      {
+        "description": "<strong>Type:</strong> `string`\r\rIcon of menu item",
+        "memberof": "Item",
+        "access": "public",
         "type": {
           "names": [
             "string"
           ]
         },
-        "optional": true,
-        "defaultvalue": "size-110",
-        "description": "Menu size in %\r\r\r       <strong>options:</strong> \r\r       `size-100` | `size-110` | `size-125` | `size-150` | `size-175` | `size-200`",
-        "name": "options.size"
+        "defaultvalue": "'none'",
+        "name": "Icon",
+        "longname": "Item.Icon",
+        "kind": "member",
+        "scope": "static",
+        "$longname": "Item.Icon",
+        "$kind": "property",
+        "$docmaLink": "api/#Item.Icon"
       },
       {
+        "comment": "/**\r\n     * <strong>Type:</strong> `string`\r\n     * \r\n     * Label of menu item\r\n     * @memberof Item\r\n     * @access public\r\n     * @type {string}\r\n     * @default ''\r\n     */",
+        "meta": {
+          "range": [
+            1646,
+            1657
+          ],
+          "filename": "item.js",
+          "lineno": 84,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {
+            "id": "astnode100000265",
+            "name": "Label",
+            "type": "ClassProperty"
+          }
+        },
+        "description": "<strong>Type:</strong> `string`\r\rLabel of menu item",
+        "memberof": "Item",
+        "access": "public",
         "type": {
           "names": [
             "string"
           ]
         },
-        "optional": true,
-        "defaultvalue": "menuv",
-        "description": "Texture dictionary name for the banner image",
-        "name": "options.dictionary"
+        "defaultvalue": "''",
+        "name": "Label",
+        "longname": "Item.Label",
+        "kind": "member",
+        "scope": "static",
+        "$longname": "Item.Label",
+        "$kind": "property",
+        "$docmaLink": "api/#Item.Label"
       },
       {
+        "comment": "/**\r\n     * <strong>Type:</strong> `boolean`\r\n     * \r\n     * When item value changed, force to save changes\r\n     * @memberof Item\r\n     * @access public\r\n     * @type {boolean}\r\n     * @default false\r\n     */",
+        "meta": {
+          "range": [
+            2734,
+            2755
+          ],
+          "filename": "item.js",
+          "lineno": 139,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {
+            "id": "astnode100000275",
+            "name": "SaveOnUpdate",
+            "type": "ClassProperty"
+          }
+        },
+        "description": "<strong>Type:</strong> `boolean`\r\rWhen item value changed, force to save changes",
+        "memberof": "Item",
+        "access": "public",
+        "type": {
+          "names": [
+            "boolean"
+          ]
+        },
+        "defaultvalue": "false",
+        "name": "SaveOnUpdate",
+        "longname": "Item.SaveOnUpdate",
+        "kind": "member",
+        "scope": "static",
+        "$longname": "Item.SaveOnUpdate",
+        "$kind": "property",
+        "$docmaLink": "api/#Item.SaveOnUpdate"
+      },
+      {
+        "comment": "/**\r\n     * <strong>Type:</strong> `string`\r\n     * \r\n     * Universally Unique Identifier (UUID) \r\n     * @memberof Item\r\n     * @access public\r\n     * @type {string}\r\n     * @readonly\r\n     */",
+        "meta": {
+          "range": [
+            1237,
+            1247
+          ],
+          "filename": "item.js",
+          "lineno": 62,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {
+            "id": "astnode100000261",
+            "name": "UUID",
+            "type": "ClassProperty"
+          }
+        },
+        "description": "<strong>Type:</strong> `string`\r\rUniversally Unique Identifier (UUID)",
+        "memberof": "Item",
+        "access": "public",
         "type": {
           "names": [
             "string"
           ]
         },
-        "optional": true,
-        "defaultvalue": "default",
-        "description": "Texture name for the banner image",
-        "name": "options.texture"
+        "readonly": true,
+        "name": "UUID",
+        "longname": "Item.UUID",
+        "kind": "member",
+        "scope": "static",
+        "$longname": "Item.UUID",
+        "$kind": "property",
+        "$docmaLink": "api/#Item.UUID"
       },
       {
+        "comment": "/**\r\n     * <strong>Type:</strong> `any`\r\n     * \r\n     * Value of menu item\r\n     * @memberof Item\r\n     * @access public\r\n     * @type {any}\r\n     * @default ''\r\n     */",
+        "meta": {
+          "range": [
+            2056,
+            2069
+          ],
+          "filename": "item.js",
+          "lineno": 106,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {
+            "id": "astnode100000269",
+            "name": "Value",
+            "type": "ClassProperty"
+          }
+        },
+        "description": "<strong>Type:</strong> `any`\r\rValue of menu item",
+        "memberof": "Item",
+        "access": "public",
+        "type": {
+          "names": [
+            "any"
+          ]
+        },
+        "defaultvalue": "''",
+        "name": "Value",
+        "longname": "Item.Value",
+        "kind": "member",
+        "scope": "static",
+        "$longname": "Item.Value",
+        "$kind": "property",
+        "$docmaLink": "api/#Item.Value"
+      },
+      {
+        "comment": "/**\r\n * <strong>Type:</strong> `event`\r\n * \r\n * Event will be triggered when item becomes active/selected in NUI\r\n * @access public\r\n * @this Item\r\n * @event Item#enter\r\n * @param {Item} item Current active/selected item\r\n * @example\r\nitem:On('enter', function(item)\r\n    print('You have entered this item :)')\r\nend)\r\n */",
+        "meta": {
+          "filename": "item.js",
+          "lineno": 233,
+          "columnno": 0,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {}
+        },
+        "description": "<strong>Type:</strong> `event`\r\rEvent will be triggered when item becomes active/selected in NUI",
+        "access": "public",
+        "this": "Item",
+        "kind": "event",
+        "name": "enter",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "Item"
+              ]
+            },
+            "description": "Current active/selected item",
+            "name": "item"
+          }
+        ],
+        "examples": [
+          "item:On('enter', function(item)\r\n    print('You have entered this item :)')\r\nend)"
+        ],
+        "memberof": "Item",
+        "longname": "Item#event:enter",
+        "scope": "instance",
+        "$longname": "Item#event:enter",
+        "$kind": "event",
+        "$docmaLink": "api/#Item#event:enter"
+      },
+      {
+        "comment": "/**\r\n * <strong>Type:</strong> `event`\r\n * \r\n * Event will be triggered when item becomes inactive/unselected in NUI\r\n * @access public\r\n * @this Item\r\n * @event Item#leave\r\n * @param {Item} item Current inactive/unselected item\r\n * @example\r\nitem:On('leave', function(item)\r\n    print('You have unselected this item :(')\r\nend)\r\n */",
+        "meta": {
+          "filename": "item.js",
+          "lineno": 248,
+          "columnno": 0,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {}
+        },
+        "description": "<strong>Type:</strong> `event`\r\rEvent will be triggered when item becomes inactive/unselected in NUI",
+        "access": "public",
+        "this": "Item",
+        "kind": "event",
+        "name": "leave",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "Item"
+              ]
+            },
+            "description": "Current inactive/unselected item",
+            "name": "item"
+          }
+        ],
+        "examples": [
+          "item:On('leave', function(item)\r\n    print('You have unselected this item :(')\r\nend)"
+        ],
+        "memberof": "Item",
+        "longname": "Item#event:leave",
+        "scope": "instance",
+        "$longname": "Item#event:leave",
+        "$kind": "event",
+        "$docmaLink": "api/#Item#event:leave"
+      },
+      {
+        "comment": "/**\r\n * <strong>Type:</strong> `event`\r\n * \r\n * Event will be triggered when item's value changed\r\n * @access public\r\n * @this Item\r\n * @event Item#update\r\n * @param {Item} item Current updated item\r\n * @param {string} key Current updated key\r\n * @param {any} value Current updated value\r\n * @param {any} oldValue Previous value\r\n * @example\r\nitem:On('update', function(item, key, value, oldValue)\r\n    print('You have updated this item :)')\r\nend)\r\n */",
+        "meta": {
+          "filename": "item.js",
+          "lineno": 263,
+          "columnno": 0,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {}
+        },
+        "description": "<strong>Type:</strong> `event`\r\rEvent will be triggered when item's value changed",
+        "access": "public",
+        "this": "Item",
+        "kind": "event",
+        "name": "update",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "Item"
+              ]
+            },
+            "description": "Current updated item",
+            "name": "item"
+          },
+          {
+            "type": {
+              "names": [
+                "string"
+              ]
+            },
+            "description": "Current updated key",
+            "name": "key"
+          },
+          {
+            "type": {
+              "names": [
+                "any"
+              ]
+            },
+            "description": "Current updated value",
+            "name": "value"
+          },
+          {
+            "type": {
+              "names": [
+                "any"
+              ]
+            },
+            "description": "Previous value",
+            "name": "oldValue"
+          }
+        ],
+        "examples": [
+          "item:On('update', function(item, key, value, oldValue)\r\n    print('You have updated this item :)')\r\nend)"
+        ],
+        "memberof": "Item",
+        "longname": "Item#event:update",
+        "scope": "instance",
+        "$longname": "Item#event:update",
+        "$kind": "event",
+        "$docmaLink": "api/#Item#event:update"
+      }
+    ]
+  },
+  {
+    "comment": "/**\r\n * Menu for MenuV\r\n * @class\r\n */",
+    "meta": {
+      "range": [
+        281,
+        23306
+      ],
+      "filename": "menu.js",
+      "lineno": 11,
+      "columnno": 0,
+      "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\menus",
+      "code": {
+        "id": "astnode100000523",
+        "name": "Menu",
+        "type": "ClassDeclaration",
+        "paramnames": []
+      }
+    },
+    "classdesc": "Menu for MenuV",
+    "kind": "class",
+    "name": "Menu",
+    "longname": "Menu",
+    "scope": "global",
+    "$longname": "Menu",
+    "$kind": "class",
+    "$docmaLink": "api/#Menu",
+    "$members": [
+      {
+        "comment": "/**\r\n     * <strong>Type:</strong> `function`\r\n     * \r\n     * This function will add a button item to {@link #Menu|Menu}\r\n     * @memberof Menu\r\n     * @access public\r\n     * @this Menu\r\n     * @param {Menu} menu {@link #Menu|Menu} to add `button` for\r\n     * @param {table} [options={}]\r\n     * Button information\r\n     *      @param {string} [options.icon='']\r\n     *             Emoji as item prefex, see {@link https://emojipedia.org/|emojipedia.org}\r\n     *      @param {string} [options.label='']\r\n     *             Label on button\r\n     *      @param {string} [options.description='']\r\n     *             Button description when this button is active\r\n     *      @param {any|Menu} [options.value=nil]\r\n     *             Button menu value, when value is a {@link #Menu|Menu}, MenuV will open that {@link #Menu|Menu} on button select\r\n     *      @param {boolean} [options.disabled=false]\r\n     *             When this option is `true`, button isn't selectable anymore\r\n     * @example\r\n     * local menu = MenuV:CreateMenu('MenuV', 'Welcome to MenuV', 'topleft', 255, 0, 0, 'size-125', 'example', 'menuv', 'example_namespace', 'native')\r\n     * \r\n     * local button = menu:AddButton({ icon = '😃', label = 'Example Button', value = 10, description = 'Example button' })\r\n     * @example\r\n     * local menu = MenuV:CreateMenu('MenuV', 'Welcome to MenuV', 'topleft', 255, 0, 0, 'size-125', 'example', 'menuv', 'example_namespace', 'native')\r\n     * local menu2 = menu:InheritMenu({title = 'MenuV 2.0', subtitle = 'Inherit menu of `menu`', theme = 'default' })\r\n     * \r\n     * local button = menu:AddButton({ icon = '😃', label = 'Open Menu2', value = menu2, description = 'Open menu 2.0' })\r\n     * @returns {ButtonItem} - New button item\r\n     */",
+        "meta": {
+          "range": [
+            16920,
+            16986
+          ],
+          "filename": "menu.js",
+          "lineno": 517,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\menus",
+          "code": {
+            "id": "astnode100000666",
+            "name": "Menu#AddButton",
+            "type": "MethodDefinition",
+            "paramnames": [
+              "menu",
+              "options"
+            ]
+          },
+          "vars": {
+            "": null
+          }
+        },
+        "description": "<strong>Type:</strong> `function`\r\rThis function will add a button item to {@link #Menu|Menu}",
+        "memberof": "Menu",
+        "access": "public",
+        "this": "Menu",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "Menu"
+              ]
+            },
+            "description": "{@link #Menu|Menu} to add `button` for",
+            "name": "menu"
+          },
+          {
+            "type": {
+              "names": [
+                "table"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": "{}",
+            "description": "Button information",
+            "name": "options"
+          },
+          {
+            "type": {
+              "names": [
+                "string"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": "''",
+            "description": "Emoji as item prefex, see {@link https://emojipedia.org/|emojipedia.org}",
+            "name": "options.icon"
+          },
+          {
+            "type": {
+              "names": [
+                "string"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": "''",
+            "description": "Label on button",
+            "name": "options.label"
+          },
+          {
+            "type": {
+              "names": [
+                "string"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": "''",
+            "description": "Button description when this button is active",
+            "name": "options.description"
+          },
+          {
+            "type": {
+              "names": [
+                "any",
+                "Menu"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": "nil",
+            "description": "Button menu value, when value is a {@link #Menu|Menu}, MenuV will open that {@link #Menu|Menu} on button select",
+            "name": "options.value"
+          },
+          {
+            "type": {
+              "names": [
+                "boolean"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": false,
+            "description": "When this option is `true`, button isn't selectable anymore",
+            "name": "options.disabled"
+          }
+        ],
+        "examples": [
+          "local menu = MenuV:CreateMenu('MenuV', 'Welcome to MenuV', 'topleft', 255, 0, 0, 'size-125', 'example', 'menuv', 'example_namespace', 'native')\r\rlocal button = menu:AddButton({ icon = '😃', label = 'Example Button', value = 10, description = 'Example button' })",
+          "local menu = MenuV:CreateMenu('MenuV', 'Welcome to MenuV', 'topleft', 255, 0, 0, 'size-125', 'example', 'menuv', 'example_namespace', 'native')\rlocal menu2 = menu:InheritMenu({title = 'MenuV 2.0', subtitle = 'Inherit menu of `menu`', theme = 'default' })\r\rlocal button = menu:AddButton({ icon = '😃', label = 'Open Menu2', value = menu2, description = 'Open menu 2.0' })"
+        ],
+        "returns": [
+          {
+            "type": {
+              "names": [
+                "ButtonItem"
+              ]
+            },
+            "description": "- New button item"
+          }
+        ],
+        "name": "AddButton",
+        "longname": "Menu#AddButton",
+        "kind": "function",
+        "scope": "instance",
+        "$longname": "Menu#AddButton",
+        "$kind": "method",
+        "$docmaLink": "api/#Menu#AddButton"
+      },
+      {
+        "comment": "/**\r\n     * <strong>Type:</strong> `function`\r\n     * \r\n     * This function will add a checkbox item to {@link #Menu|Menu}\r\n     * @memberof Menu\r\n     * @access public\r\n     * @this Menu\r\n     * @param {Menu} menu {@link #Menu|Menu} to add `checkbox` item for\r\n     * @param {table} [options={}]\r\n     * Checkbox information\r\n     *      @param {string} [options.icon='']\r\n     *             Emoji as item prefex, see {@link https://emojipedia.org/|emojipedia.org}\r\n     *      @param {string} [options.label='']\r\n     *             Label on checkbox\r\n     *      @param {string} [options.description='']\r\n     *             Checkbox description when this checkbox item is active\r\n     *      @param {boolean} [options.value=false]\r\n     *             Checkbox item value\r\n     *      @param {boolean} [options.disabled=false]\r\n     *             When this option is `true`, checkbox isn't selectable anymore\r\n     * @example\r\n     * local menu = MenuV:CreateMenu('MenuV', 'Welcome to MenuV', 'topleft', 255, 0, 0, 'size-125', 'example', 'menuv', 'example_namespace', 'native')\r\n     * \r\n     * local checkbox = menu:AddCheckbox({ icon = '💡', label = 'Checkbox Example', value = false })\r\n     * @returns {CheckboxItem} - New checkbox item\r\n     */",
+        "meta": {
+          "range": [
+            18252,
+            18322
+          ],
+          "filename": "menu.js",
+          "lineno": 547,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\menus",
+          "code": {
+            "id": "astnode100000675",
+            "name": "Menu#AddCheckbox",
+            "type": "MethodDefinition",
+            "paramnames": [
+              "menu",
+              "options"
+            ]
+          },
+          "vars": {
+            "": null
+          }
+        },
+        "description": "<strong>Type:</strong> `function`\r\rThis function will add a checkbox item to {@link #Menu|Menu}",
+        "memberof": "Menu",
+        "access": "public",
+        "this": "Menu",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "Menu"
+              ]
+            },
+            "description": "{@link #Menu|Menu} to add `checkbox` item for",
+            "name": "menu"
+          },
+          {
+            "type": {
+              "names": [
+                "table"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": "{}",
+            "description": "Checkbox information",
+            "name": "options"
+          },
+          {
+            "type": {
+              "names": [
+                "string"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": "''",
+            "description": "Emoji as item prefex, see {@link https://emojipedia.org/|emojipedia.org}",
+            "name": "options.icon"
+          },
+          {
+            "type": {
+              "names": [
+                "string"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": "''",
+            "description": "Label on checkbox",
+            "name": "options.label"
+          },
+          {
+            "type": {
+              "names": [
+                "string"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": "''",
+            "description": "Checkbox description when this checkbox item is active",
+            "name": "options.description"
+          },
+          {
+            "type": {
+              "names": [
+                "boolean"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": false,
+            "description": "Checkbox item value",
+            "name": "options.value"
+          },
+          {
+            "type": {
+              "names": [
+                "boolean"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": false,
+            "description": "When this option is `true`, checkbox isn't selectable anymore",
+            "name": "options.disabled"
+          }
+        ],
+        "examples": [
+          "local menu = MenuV:CreateMenu('MenuV', 'Welcome to MenuV', 'topleft', 255, 0, 0, 'size-125', 'example', 'menuv', 'example_namespace', 'native')\r\rlocal checkbox = menu:AddCheckbox({ icon = '💡', label = 'Checkbox Example', value = false })"
+        ],
+        "returns": [
+          {
+            "type": {
+              "names": [
+                "CheckboxItem"
+              ]
+            },
+            "description": "- New checkbox item"
+          }
+        ],
+        "name": "AddCheckbox",
+        "longname": "Menu#AddCheckbox",
+        "kind": "function",
+        "scope": "instance",
+        "$longname": "Menu#AddCheckbox",
+        "$kind": "method",
+        "$docmaLink": "api/#Menu#AddCheckbox"
+      },
+      {
+        "comment": "/**\r\n     * <strong>Type:</strong> `function`\r\n     * \r\n     * This function will add a confirm item to {@link #Menu|Menu}\r\n     * @memberof Menu\r\n     * @access public\r\n     * @this Menu\r\n     * @param {Menu} menu {@link #Menu|Menu} to add `confirm` item for\r\n     * @param {table} [options={}]\r\n     * Confirm information\r\n     *      @param {string} [options.icon='']\r\n     *             Emoji as item prefex, see {@link https://emojipedia.org/|emojipedia.org}\r\n     *      @param {string} [options.label='']\r\n     *             Label on confirm item\r\n     *      @param {string} [options.description='']\r\n     *             Confirm description when this confirm item is active\r\n     *      @param {boolean} [options.value=false]\r\n     *             Confirm menu value\r\n     *      @param {boolean} [options.disabled=false]\r\n     *             When this option is `true`, confirm item isn't selectable anymore\r\n     * @example\r\n     * local menu = MenuV:CreateMenu('MenuV', 'Welcome to MenuV', 'topleft', 255, 0, 0, 'size-125', 'example', 'menuv', 'example_namespace', 'native')\r\n     * \r\n     * local confirm = menu:AddConfirm({ icon = '🔥', label = 'Example Confirm', value = false })\r\n     * @returns {ConfirmItem} - New confirm item\r\n     */",
+        "meta": {
+          "range": [
+            23234,
+            23302
+          ],
+          "filename": "menu.js",
+          "lineno": 654,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\menus",
+          "code": {
+            "id": "astnode100000702",
+            "name": "Menu#AddConfirm",
+            "type": "MethodDefinition",
+            "paramnames": [
+              "menu",
+              "options"
+            ]
+          },
+          "vars": {
+            "": null
+          }
+        },
+        "description": "<strong>Type:</strong> `function`\r\rThis function will add a confirm item to {@link #Menu|Menu}",
+        "memberof": "Menu",
+        "access": "public",
+        "this": "Menu",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "Menu"
+              ]
+            },
+            "description": "{@link #Menu|Menu} to add `confirm` item for",
+            "name": "menu"
+          },
+          {
+            "type": {
+              "names": [
+                "table"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": "{}",
+            "description": "Confirm information",
+            "name": "options"
+          },
+          {
+            "type": {
+              "names": [
+                "string"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": "''",
+            "description": "Emoji as item prefex, see {@link https://emojipedia.org/|emojipedia.org}",
+            "name": "options.icon"
+          },
+          {
+            "type": {
+              "names": [
+                "string"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": "''",
+            "description": "Label on confirm item",
+            "name": "options.label"
+          },
+          {
+            "type": {
+              "names": [
+                "string"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": "''",
+            "description": "Confirm description when this confirm item is active",
+            "name": "options.description"
+          },
+          {
+            "type": {
+              "names": [
+                "boolean"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": false,
+            "description": "Confirm menu value",
+            "name": "options.value"
+          },
+          {
+            "type": {
+              "names": [
+                "boolean"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": false,
+            "description": "When this option is `true`, confirm item isn't selectable anymore",
+            "name": "options.disabled"
+          }
+        ],
+        "examples": [
+          "local menu = MenuV:CreateMenu('MenuV', 'Welcome to MenuV', 'topleft', 255, 0, 0, 'size-125', 'example', 'menuv', 'example_namespace', 'native')\r\rlocal confirm = menu:AddConfirm({ icon = '🔥', label = 'Example Confirm', value = false })"
+        ],
+        "returns": [
+          {
+            "type": {
+              "names": [
+                "ConfirmItem"
+              ]
+            },
+            "description": "- New confirm item"
+          }
+        ],
+        "name": "AddConfirm",
+        "longname": "Menu#AddConfirm",
+        "kind": "function",
+        "scope": "instance",
+        "$longname": "Menu#AddConfirm",
+        "$kind": "method",
+        "$docmaLink": "api/#Menu#AddConfirm"
+      },
+      {
+        "comment": "/**\r\n     * <strong>Type:</strong> `function`\r\n     * \r\n     * This function will add a range item to {@link #Menu|Menu}\r\n     * @memberof Menu\r\n     * @access public\r\n     * @this Menu\r\n     * @param {Menu} menu {@link #Menu|Menu} to add `range` item for\r\n     * @param {table} [options={}]\r\n     * Range information\r\n     *      @param {string} [options.icon='']\r\n     *             Emoji as item prefex, see {@link https://emojipedia.org/|emojipedia.org}\r\n     *      @param {string} [options.label='']\r\n     *             Label on range item\r\n     *      @param {string} [options.description='']\r\n     *             Range item description when this range item is active\r\n     *      @param {number} [options.value=0]\r\n     *             Range item value\r\n     *      @param {number} [options.min=0]\r\n     *             Minimal range value\r\n     *      @param {number} [options.max=0]\r\n     *             Maximal range value\r\n     *      @param {boolean} [options.disabled=false]\r\n     *             When this option is `true`, range item isn't selectable anymore\r\n     * @example\r\n     * local menu = MenuV:CreateMenu('MenuV', 'Welcome to MenuV', 'topleft', 255, 0, 0, 'size-125', 'example', 'menuv', 'example_namespace', 'native')\r\n     * \r\n     * local range = menu:AddRange({ icon = '⚽', label = 'Example Range Item', min = 0, max = 10, value = 0, saveOnUpdate = true })\r\n     * @returns {RangeItem} - New range item\r\n     */",
+        "meta": {
+          "range": [
+            21907,
+            21971
+          ],
+          "filename": "menu.js",
+          "lineno": 624,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\menus",
+          "code": {
+            "id": "astnode100000693",
+            "name": "Menu#AddRange",
+            "type": "MethodDefinition",
+            "paramnames": [
+              "menu",
+              "options"
+            ]
+          },
+          "vars": {
+            "": null
+          }
+        },
+        "description": "<strong>Type:</strong> `function`\r\rThis function will add a range item to {@link #Menu|Menu}",
+        "memberof": "Menu",
+        "access": "public",
+        "this": "Menu",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "Menu"
+              ]
+            },
+            "description": "{@link #Menu|Menu} to add `range` item for",
+            "name": "menu"
+          },
+          {
+            "type": {
+              "names": [
+                "table"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": "{}",
+            "description": "Range information",
+            "name": "options"
+          },
+          {
+            "type": {
+              "names": [
+                "string"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": "''",
+            "description": "Emoji as item prefex, see {@link https://emojipedia.org/|emojipedia.org}",
+            "name": "options.icon"
+          },
+          {
+            "type": {
+              "names": [
+                "string"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": "''",
+            "description": "Label on range item",
+            "name": "options.label"
+          },
+          {
+            "type": {
+              "names": [
+                "string"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": "''",
+            "description": "Range item description when this range item is active",
+            "name": "options.description"
+          },
+          {
+            "type": {
+              "names": [
+                "number"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": 0,
+            "description": "Range item value",
+            "name": "options.value"
+          },
+          {
+            "type": {
+              "names": [
+                "number"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": 0,
+            "description": "Minimal range value",
+            "name": "options.min"
+          },
+          {
+            "type": {
+              "names": [
+                "number"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": 0,
+            "description": "Maximal range value",
+            "name": "options.max"
+          },
+          {
+            "type": {
+              "names": [
+                "boolean"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": false,
+            "description": "When this option is `true`, range item isn't selectable anymore",
+            "name": "options.disabled"
+          }
+        ],
+        "examples": [
+          "local menu = MenuV:CreateMenu('MenuV', 'Welcome to MenuV', 'topleft', 255, 0, 0, 'size-125', 'example', 'menuv', 'example_namespace', 'native')\r\rlocal range = menu:AddRange({ icon = '⚽', label = 'Example Range Item', min = 0, max = 10, value = 0, saveOnUpdate = true })"
+        ],
+        "returns": [
+          {
+            "type": {
+              "names": [
+                "RangeItem"
+              ]
+            },
+            "description": "- New range item"
+          }
+        ],
+        "name": "AddRange",
+        "longname": "Menu#AddRange",
+        "kind": "function",
+        "scope": "instance",
+        "$longname": "Menu#AddRange",
+        "$kind": "method",
+        "$docmaLink": "api/#Menu#AddRange"
+      },
+      {
+        "comment": "/**\r\n     * <strong>Type:</strong> `function`\r\n     * \r\n     * This function will add a slider item to {@link #Menu|Menu}\r\n     * @memberof Menu\r\n     * @access public\r\n     * @this Menu\r\n     * @param {Menu} menu {@link #Menu|Menu} to add `slider` for\r\n     * @param {table} [options={}]\r\n     * Slider information\r\n     *      @param {string} [options.icon='']\r\n     *             Emoji as item prefex, see {@link https://emojipedia.org/|emojipedia.org}\r\n     *      @param {string} [options.label='']\r\n     *             Label on slider\r\n     *      @param {string} [options.description='']\r\n     *             Slider description when this slider is active\r\n     *      @param {number} [options.value=1]\r\n     *             Slider menu value, must be a valid index of {@link #SliderItem.Values|SliderItem.Values}\r\n     *      @param {table} [options.values=[]]\r\n     *             List of values\r\n     *             @param {string} [value.label='Value']\r\n     *                    Label of value item\r\n     *             @param {string} [value.description='']\r\n     *                    Description of value item\r\n     *             @param {any} [value.value=null]\r\n     *                    Value of value item\r\n     *             @param {boolean} [options.disabled=false]\r\n     *                    When this option is `true`, slider isn't selectable anymore\r\n     * @example\r\n     * local menu = MenuV:CreateMenu('MenuV', 'Welcome to MenuV', 'topleft', 255, 0, 0, 'size-125', 'example', 'menuv', 'example_namespace', 'native')\r\n     * \r\n     * local slider = menu:AddSlider({ icon = '❤️', label = 'Example Slider', value = 'demo', values = {\r\n            { label = 'Demo Item', value = 'demo', description = 'Demo Item 1' },\r\n            { label = 'Demo Item 2', value = 'demo2', description = 'Demo Item 2' },\r\n            { label = 'Demo Item 3', value = 'demo3', description = 'Demo Item 3' },\r\n            { label = 'Demo Item 4', value = 'demo4', description = 'Demo Item 4' }\r\n        }})\r\n     * @returns {SliderItem} - New slider item\r\n     */",
+        "meta": {
+          "range": [
+            20394,
+            20460
+          ],
+          "filename": "menu.js",
+          "lineno": 590,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\menus",
+          "code": {
+            "id": "astnode100000684",
+            "name": "Menu#AddSlider",
+            "type": "MethodDefinition",
+            "paramnames": [
+              "menu",
+              "options"
+            ]
+          },
+          "vars": {
+            "": null
+          }
+        },
+        "description": "<strong>Type:</strong> `function`\r\rThis function will add a slider item to {@link #Menu|Menu}",
+        "memberof": "Menu",
+        "access": "public",
+        "this": "Menu",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "Menu"
+              ]
+            },
+            "description": "{@link #Menu|Menu} to add `slider` for",
+            "name": "menu"
+          },
+          {
+            "type": {
+              "names": [
+                "table"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": "{}",
+            "description": "Slider information",
+            "name": "options"
+          },
+          {
+            "type": {
+              "names": [
+                "string"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": "''",
+            "description": "Emoji as item prefex, see {@link https://emojipedia.org/|emojipedia.org}",
+            "name": "options.icon"
+          },
+          {
+            "type": {
+              "names": [
+                "string"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": "''",
+            "description": "Label on slider",
+            "name": "options.label"
+          },
+          {
+            "type": {
+              "names": [
+                "string"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": "''",
+            "description": "Slider description when this slider is active",
+            "name": "options.description"
+          },
+          {
+            "type": {
+              "names": [
+                "number"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": 1,
+            "description": "Slider menu value, must be a valid index of {@link #SliderItem.Values|SliderItem.Values}",
+            "name": "options.value"
+          },
+          {
+            "type": {
+              "names": [
+                "table"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": "[]",
+            "description": "List of values",
+            "name": "options.values"
+          },
+          {
+            "type": {
+              "names": [
+                "string"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": "'Value'",
+            "description": "Label of value item",
+            "name": "value.label"
+          },
+          {
+            "type": {
+              "names": [
+                "string"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": "''",
+            "description": "Description of value item",
+            "name": "value.description"
+          },
+          {
+            "type": {
+              "names": [
+                "any"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": null,
+            "description": "Value of value item",
+            "name": "value.value"
+          },
+          {
+            "type": {
+              "names": [
+                "boolean"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": false,
+            "description": "When this option is `true`, slider isn't selectable anymore",
+            "name": "options.disabled"
+          }
+        ],
+        "examples": [
+          "local menu = MenuV:CreateMenu('MenuV', 'Welcome to MenuV', 'topleft', 255, 0, 0, 'size-125', 'example', 'menuv', 'example_namespace', 'native')\r\rlocal slider = menu:AddSlider({ icon = '❤️', label = 'Example Slider', value = 'demo', values = {\r\n            { label = 'Demo Item', value = 'demo', description = 'Demo Item 1' },\r\n            { label = 'Demo Item 2', value = 'demo2', description = 'Demo Item 2' },\r\n            { label = 'Demo Item 3', value = 'demo3', description = 'Demo Item 3' },\r\n            { label = 'Demo Item 4', value = 'demo4', description = 'Demo Item 4' }\r\n        }})"
+        ],
+        "returns": [
+          {
+            "type": {
+              "names": [
+                "SliderItem"
+              ]
+            },
+            "description": "- New slider item"
+          }
+        ],
+        "name": "AddSlider",
+        "longname": "Menu#AddSlider",
+        "kind": "function",
+        "scope": "instance",
+        "$longname": "Menu#AddSlider",
+        "$kind": "method",
+        "$docmaLink": "api/#Menu#AddSlider"
+      },
+      {
+        "comment": "/**\r\n     * <strong>Type:</strong> `function`\r\n     * \r\n     * Clear all items in menu\r\n     * @memberof Menu\r\n     * @access public\r\n     * @param {Menu} menu Menu\r\n     * @param {boolean} [update=true] Force NUI update\r\n     * @example\r\n     * local menu = MenuV:CreateMenu('MenuV', 'Welcome to MenuV', 'topleft', 255, 0, 0, 'size-125', 'example', 'menuv', 'example_namespace', 'native')\r\n     * \r\n     * menu:ClearItems()\r\n     * @example\r\n     * local menu = MenuV:CreateMenu('MenuV', 'Welcome to MenuV', 'topleft', 255, 0, 0, 'size-125', 'example', 'menuv', 'example_namespace', 'native')\r\n     * \r\n     * menu:ClearItems(false)\r\n     */",
+        "meta": {
+          "range": [
+            13108,
+            13135
+          ],
+          "filename": "menu.js",
+          "lineno": 427,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\menus",
+          "code": {
+            "id": "astnode100000638",
+            "name": "Menu#ClearItems",
+            "type": "MethodDefinition",
+            "paramnames": [
+              "menu",
+              "update"
+            ]
+          },
+          "vars": {
+            "": null
+          }
+        },
+        "description": "<strong>Type:</strong> `function`\r\rClear all items in menu",
+        "memberof": "Menu",
+        "access": "public",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "Menu"
+              ]
+            },
+            "description": "Menu",
+            "name": "menu"
+          },
+          {
+            "type": {
+              "names": [
+                "boolean"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": true,
+            "description": "Force NUI update",
+            "name": "update"
+          }
+        ],
+        "examples": [
+          "local menu = MenuV:CreateMenu('MenuV', 'Welcome to MenuV', 'topleft', 255, 0, 0, 'size-125', 'example', 'menuv', 'example_namespace', 'native')\r\rmenu:ClearItems()",
+          "local menu = MenuV:CreateMenu('MenuV', 'Welcome to MenuV', 'topleft', 255, 0, 0, 'size-125', 'example', 'menuv', 'example_namespace', 'native')\r\rmenu:ClearItems(false)"
+        ],
+        "name": "ClearItems",
+        "longname": "Menu#ClearItems",
+        "kind": "function",
+        "scope": "instance",
+        "$longname": "Menu#ClearItems",
+        "$kind": "method",
+        "$docmaLink": "api/#Menu#ClearItems"
+      },
+      {
+        "comment": "/**\r\n     * <strong>Type:</strong> `function`\r\n     * \r\n     * Close this menu\r\n     * @memberof Menu\r\n     * @access public\r\n     * @param {Menu} menu Menu\r\n     * @example\r\n     * local menu = MenuV:CreateMenu('MenuV', 'Welcome to MenuV', 'topleft', 255, 0, 0, 'size-125', 'example', 'menuv', 'example_namespace', 'native')\r\n     * \r\n     * menu:Close()\r\n     */",
+        "meta": {
+          "range": [
+            13904,
+            13918
+          ],
+          "filename": "menu.js",
+          "lineno": 455,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\menus",
+          "code": {
+            "id": "astnode100000649",
+            "name": "Menu#Close",
+            "type": "MethodDefinition",
+            "paramnames": [
+              "menu"
+            ]
+          },
+          "vars": {
+            "": null
+          }
+        },
+        "description": "<strong>Type:</strong> `function`\r\rClose this menu",
+        "memberof": "Menu",
+        "access": "public",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "Menu"
+              ]
+            },
+            "description": "Menu",
+            "name": "menu"
+          }
+        ],
+        "examples": [
+          "local menu = MenuV:CreateMenu('MenuV', 'Welcome to MenuV', 'topleft', 255, 0, 0, 'size-125', 'example', 'menuv', 'example_namespace', 'native')\r\rmenu:Close()"
+        ],
+        "name": "Close",
+        "longname": "Menu#Close",
+        "kind": "function",
+        "scope": "instance",
+        "$longname": "Menu#Close",
+        "$kind": "method",
+        "$docmaLink": "api/#Menu#Close"
+      },
+      {
+        "comment": "/**\r\n     * Create a new menu from properties of this one (without items and events)\r\n     * @memberof Menu\r\n     * @access public\r\n     * @param {Menu} menu Menu\r\n     * @param {table} overrides A table with key values to override, see {@link #Menu~options|Menu options}\r\n     * @param {string} namespace Unique namespace, see {@link #Menu.Namespace|Menu.Namespace}\r\n     * @example\r\n     * local menu = MenuV:CreateMenu('MenuV', 'Welcome to MenuV', 'topleft', 255, 0, 0, 'size-125', 'example', 'menuv', 'example_namespace', 'native')\r\n     * \r\n     * local menu2 = menu:InheritMenu({title = 'MenuV 2.0', subtitle = 'Inherit menu of `menu`', theme = 'default' })\r\n     * @returns {Menu} - New menu with properties of this one\r\n     */",
+        "meta": {
+          "range": [
+            15106,
+            15148
+          ],
+          "filename": "menu.js",
+          "lineno": 484,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\menus",
+          "code": {
+            "id": "astnode100000659",
+            "name": "Menu#InheritMenu",
+            "type": "MethodDefinition",
+            "paramnames": [
+              "menu",
+              "overrides",
+              "namespace"
+            ]
+          },
+          "vars": {
+            "": null
+          }
+        },
+        "description": "Create a new menu from properties of this one (without items and events)",
+        "memberof": "Menu",
+        "access": "public",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "Menu"
+              ]
+            },
+            "description": "Menu",
+            "name": "menu"
+          },
+          {
+            "type": {
+              "names": [
+                "table"
+              ]
+            },
+            "description": "A table with key values to override, see {@link #Menu~options|Menu options}",
+            "name": "overrides"
+          },
+          {
+            "type": {
+              "names": [
+                "string"
+              ]
+            },
+            "description": "Unique namespace, see {@link #Menu.Namespace|Menu.Namespace}",
+            "name": "namespace"
+          }
+        ],
+        "examples": [
+          "local menu = MenuV:CreateMenu('MenuV', 'Welcome to MenuV', 'topleft', 255, 0, 0, 'size-125', 'example', 'menuv', 'example_namespace', 'native')\r\rlocal menu2 = menu:InheritMenu({title = 'MenuV 2.0', subtitle = 'Inherit menu of `menu`', theme = 'default' })"
+        ],
+        "returns": [
+          {
+            "type": {
+              "names": [
+                "Menu"
+              ]
+            },
+            "description": "- New menu with properties of this one"
+          }
+        ],
+        "name": "InheritMenu",
+        "longname": "Menu#InheritMenu",
+        "kind": "function",
+        "scope": "instance",
+        "$longname": "Menu#InheritMenu",
+        "$kind": "method",
+        "$docmaLink": "api/#Menu#InheritMenu"
+      },
+      {
+        "comment": "/**\r\n     * <strong>Type:</strong> `function`\r\n     * \r\n     * Register a function as `on` event trigger\r\n     * @memberof Menu\r\n     * @access public\r\n     * @this Menu\r\n     * @param {Menu} menu {@link #Menu|Menu} to register function for\r\n     * @param {string} event Name of `on` event to trigger\r\n     * @param {function} func Function to trigger\r\n     * @example\r\n     * local menu = MenuV:CreateMenu('MenuV', 'Welcome to MenuV', 'topleft', 255, 0, 0, 'size-125', 'example', 'menuv', 'example_namespace', 'native')\r\n     * \r\n     * menu:On('open', function(m)\r\n     *    print('Menu is now open :D')\r\n     * end)\r\n     * @returns {string} Universally Unique Identifier (UUID)\r\n     */",
+        "meta": {
+          "range": [
+            6477,
+            6501
+          ],
+          "filename": "menu.js",
+          "lineno": 249,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\menus",
+          "code": {
+            "id": "astnode100000569",
+            "name": "Menu#On",
+            "type": "MethodDefinition",
+            "paramnames": [
+              "menu",
+              "event",
+              "func"
+            ]
+          },
+          "vars": {
+            "": null
+          }
+        },
+        "description": "<strong>Type:</strong> `function`\r\rRegister a function as `on` event trigger",
+        "memberof": "Menu",
+        "access": "public",
+        "this": "Menu",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "Menu"
+              ]
+            },
+            "description": "{@link #Menu|Menu} to register function for",
+            "name": "menu"
+          },
+          {
+            "type": {
+              "names": [
+                "string"
+              ]
+            },
+            "description": "Name of `on` event to trigger",
+            "name": "event"
+          },
+          {
+            "type": {
+              "names": [
+                "function"
+              ]
+            },
+            "description": "Function to trigger",
+            "name": "func"
+          }
+        ],
+        "examples": [
+          "local menu = MenuV:CreateMenu('MenuV', 'Welcome to MenuV', 'topleft', 255, 0, 0, 'size-125', 'example', 'menuv', 'example_namespace', 'native')\r\rmenu:On('open', function(m)\r   print('Menu is now open :D')\rend)"
+        ],
+        "returns": [
+          {
+            "type": {
+              "names": [
+                "string"
+              ]
+            },
+            "description": "Universally Unique Identifier (UUID)"
+          }
+        ],
+        "name": "On",
+        "longname": "Menu#On",
+        "kind": "function",
+        "scope": "instance",
+        "$longname": "Menu#On",
+        "$kind": "method",
+        "$docmaLink": "api/#Menu#On"
+      },
+      {
+        "comment": "/**\r\n     * <strong>Type:</strong> `function`\r\n     * \r\n     * Open this menu\r\n     * @memberof Menu\r\n     * @access public\r\n     * @param {Menu} menu Menu\r\n     * @example\r\n     * local menu = MenuV:CreateMenu('MenuV', 'Welcome to MenuV', 'topleft', 255, 0, 0, 'size-125', 'example', 'menuv', 'example_namespace', 'native')\r\n     * \r\n     * menu:Open()\r\n     */",
+        "meta": {
+          "range": [
+            13512,
+            13525
+          ],
+          "filename": "menu.js",
+          "lineno": 441,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\menus",
+          "code": {
+            "id": "astnode100000644",
+            "name": "Menu#Open",
+            "type": "MethodDefinition",
+            "paramnames": [
+              "menu"
+            ]
+          },
+          "vars": {
+            "": null
+          }
+        },
+        "description": "<strong>Type:</strong> `function`\r\rOpen this menu",
+        "memberof": "Menu",
+        "access": "public",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "Menu"
+              ]
+            },
+            "description": "Menu",
+            "name": "menu"
+          }
+        ],
+        "examples": [
+          "local menu = MenuV:CreateMenu('MenuV', 'Welcome to MenuV', 'topleft', 255, 0, 0, 'size-125', 'example', 'menuv', 'example_namespace', 'native')\r\rmenu:Open()"
+        ],
+        "name": "Open",
+        "longname": "Menu#Open",
+        "kind": "function",
+        "scope": "instance",
+        "$longname": "Menu#Open",
+        "$kind": "method",
+        "$docmaLink": "api/#Menu#Open"
+      },
+      {
+        "comment": "/**\r\n     * <strong>Type:</strong> `function`\r\n     * \r\n     * Register keybind for opening this menu, a unqiue {@link #Menu.Namespace|Menu.Namespace} is required\r\n     * @memberof Menu\r\n     * @access public\r\n     * @param {Menu} menu Menu\r\n     * @param {string} defaultType Default input type, like: KEYBOARD, MOUSE_BUTTON etc.\r\n     * @param {string} defaultKey Default input button, like: E, F12, LEFT_BUTTON etc.\r\n     * @example\r\n     * local menu = MenuV:CreateMenu('MenuV', 'Welcome to MenuV', 'topleft', 255, 0, 0, 'size-125', 'example', 'menuv', 'example_namespace', 'native')\r\n     * \r\n     * menu:OpenWith('keyboard', 'F1')\r\n     */",
+        "meta": {
+          "range": [
+            10804,
+            10846
+          ],
+          "filename": "menu.js",
+          "lineno": 359,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\menus",
+          "code": {
+            "id": "astnode100000613",
+            "name": "Menu#OpenWith",
+            "type": "MethodDefinition",
+            "paramnames": [
+              "menu",
+              "defaultType",
+              "defaultKey"
+            ]
+          },
+          "vars": {
+            "": null
+          }
+        },
+        "description": "<strong>Type:</strong> `function`\r\rRegister keybind for opening this menu, a unqiue {@link #Menu.Namespace|Menu.Namespace} is required",
+        "memberof": "Menu",
+        "access": "public",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "Menu"
+              ]
+            },
+            "description": "Menu",
+            "name": "menu"
+          },
+          {
+            "type": {
+              "names": [
+                "string"
+              ]
+            },
+            "description": "Default input type, like: KEYBOARD, MOUSE_BUTTON etc.",
+            "name": "defaultType"
+          },
+          {
+            "type": {
+              "names": [
+                "string"
+              ]
+            },
+            "description": "Default input button, like: E, F12, LEFT_BUTTON etc.",
+            "name": "defaultKey"
+          }
+        ],
+        "examples": [
+          "local menu = MenuV:CreateMenu('MenuV', 'Welcome to MenuV', 'topleft', 255, 0, 0, 'size-125', 'example', 'menuv', 'example_namespace', 'native')\r\rmenu:OpenWith('keyboard', 'F1')"
+        ],
+        "name": "OpenWith",
+        "longname": "Menu#OpenWith",
+        "kind": "function",
+        "scope": "instance",
+        "$longname": "Menu#OpenWith",
+        "$kind": "method",
+        "$docmaLink": "api/#Menu#OpenWith"
+      },
+      {
+        "comment": "/**\r\n     * <strong>Type:</strong> `function`\r\n     * \r\n     * Remove a registered `on` event\r\n     * @memberof Menu\r\n     * @access public\r\n     * @this Menu\r\n     * @param {Menu} menu {@link #Menu|Menu} to remove event for\r\n     * @param {string} event Name of `on` event to remove\r\n     * @param {string} uuid Universally Unique Identifier (UUID) of registered `on` event\r\n     * @example\r\n     * local menu = MenuV:CreateMenu('MenuV', 'Welcome to MenuV', 'topleft', 255, 0, 0, 'size-125', 'example', 'menuv', 'example_namespace', 'native')\r\n     * \r\n     * local event_uuid = menu:On('open', function(m)\r\n     *    print('Menu is now open :D')\r\n     * end)\r\n     * \r\n     * menu:RemoveOnEvent('open', event_uuid)\r\n     */",
+        "meta": {
+          "range": [
+            7241,
+            7276
+          ],
+          "filename": "menu.js",
+          "lineno": 270,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\menus",
+          "code": {
+            "id": "astnode100000576",
+            "name": "Menu#RemoveOnEvent",
+            "type": "MethodDefinition",
+            "paramnames": [
+              "menu",
+              "event",
+              "uuid"
+            ]
+          },
+          "vars": {
+            "": null
+          }
+        },
+        "description": "<strong>Type:</strong> `function`\r\rRemove a registered `on` event",
+        "memberof": "Menu",
+        "access": "public",
+        "this": "Menu",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "Menu"
+              ]
+            },
+            "description": "{@link #Menu|Menu} to remove event for",
+            "name": "menu"
+          },
+          {
+            "type": {
+              "names": [
+                "string"
+              ]
+            },
+            "description": "Name of `on` event to remove",
+            "name": "event"
+          },
+          {
+            "type": {
+              "names": [
+                "string"
+              ]
+            },
+            "description": "Universally Unique Identifier (UUID) of registered `on` event",
+            "name": "uuid"
+          }
+        ],
+        "examples": [
+          "local menu = MenuV:CreateMenu('MenuV', 'Welcome to MenuV', 'topleft', 255, 0, 0, 'size-125', 'example', 'menuv', 'example_namespace', 'native')\r\rlocal event_uuid = menu:On('open', function(m)\r   print('Menu is now open :D')\rend)\r\rmenu:RemoveOnEvent('open', event_uuid)"
+        ],
+        "name": "RemoveOnEvent",
+        "longname": "Menu#RemoveOnEvent",
+        "kind": "function",
+        "scope": "instance",
+        "$longname": "Menu#RemoveOnEvent",
+        "$kind": "method",
+        "$docmaLink": "api/#Menu#RemoveOnEvent"
+      },
+      {
+        "comment": "/**\r\n     * <strong>Type:</strong> `function`\r\n     * \r\n     * Change menu's position\r\n     * @memberof Menu\r\n     * @access public\r\n     * @param {Menu} menu Menu\r\n     * @param {string} position\r\n     * Menu position on screen\r\n     * \r\n     * \r\n     * <strong>options:</strong> \r\n     * \r\n     * `topleft` | `topcenter` | `topright` | `centerleft` | `center` | `centerright` | `bottomleft` | `bottomcenter` | `bottomright`\r\n     * @example\r\n     * local menu = MenuV:CreateMenu('MenuV', 'Welcome to MenuV', 'topleft', 255, 0, 0, 'size-125', 'example', 'menuv', 'example_namespace', 'native')\r\n     * \r\n     * menu:SetPosition('bottomright')\r\n     */",
+        "meta": {
+          "range": [
+            12421,
+            12451
+          ],
+          "filename": "menu.js",
+          "lineno": 408,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\menus",
+          "code": {
+            "id": "astnode100000632",
+            "name": "Menu#SetPosition",
+            "type": "MethodDefinition",
+            "paramnames": [
+              "menu",
+              "position"
+            ]
+          },
+          "vars": {
+            "": null
+          }
+        },
+        "description": "<strong>Type:</strong> `function`\r\rChange menu's position",
+        "memberof": "Menu",
+        "access": "public",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "Menu"
+              ]
+            },
+            "description": "Menu",
+            "name": "menu"
+          },
+          {
+            "type": {
+              "names": [
+                "string"
+              ]
+            },
+            "description": "Menu position on screen\r\r\r<strong>options:</strong> \r\r`topleft` | `topcenter` | `topright` | `centerleft` | `center` | `centerright` | `bottomleft` | `bottomcenter` | `bottomright`",
+            "name": "position"
+          }
+        ],
+        "examples": [
+          "local menu = MenuV:CreateMenu('MenuV', 'Welcome to MenuV', 'topleft', 255, 0, 0, 'size-125', 'example', 'menuv', 'example_namespace', 'native')\r\rmenu:SetPosition('bottomright')"
+        ],
+        "name": "SetPosition",
+        "longname": "Menu#SetPosition",
+        "kind": "function",
+        "scope": "instance",
+        "$longname": "Menu#SetPosition",
+        "$kind": "method",
+        "$docmaLink": "api/#Menu#SetPosition"
+      },
+      {
+        "comment": "/**\r\n     * Change menu's subtitle\r\n     * @memberof Menu\r\n     * @access public\r\n     * @param {Menu} menu Menu\r\n     * @param {string} subtitle Subtitle of menu\r\n     * @example\r\n     * local menu = MenuV:CreateMenu('MenuV', 'Welcome to MenuV', 'topleft', 255, 0, 0, 'size-125', 'example', 'menuv', 'example_namespace', 'native')\r\n     * \r\n     * menu:SetSubtitle('Example Subtitle')\r\n     */",
+        "meta": {
+          "range": [
+            11724,
+            11754
+          ],
+          "filename": "menu.js",
+          "lineno": 387,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\menus",
+          "code": {
+            "id": "astnode100000626",
+            "name": "Menu#SetSubtitle",
+            "type": "MethodDefinition",
+            "paramnames": [
+              "menu",
+              "subtitle"
+            ]
+          },
+          "vars": {
+            "": null
+          }
+        },
+        "description": "Change menu's subtitle",
+        "memberof": "Menu",
+        "access": "public",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "Menu"
+              ]
+            },
+            "description": "Menu",
+            "name": "menu"
+          },
+          {
+            "type": {
+              "names": [
+                "string"
+              ]
+            },
+            "description": "Subtitle of menu",
+            "name": "subtitle"
+          }
+        ],
+        "examples": [
+          "local menu = MenuV:CreateMenu('MenuV', 'Welcome to MenuV', 'topleft', 255, 0, 0, 'size-125', 'example', 'menuv', 'example_namespace', 'native')\r\rmenu:SetSubtitle('Example Subtitle')"
+        ],
+        "name": "SetSubtitle",
+        "longname": "Menu#SetSubtitle",
+        "kind": "function",
+        "scope": "instance",
+        "$longname": "Menu#SetSubtitle",
+        "$kind": "method",
+        "$docmaLink": "api/#Menu#SetSubtitle"
+      },
+      {
+        "comment": "/**\r\n     * <strong>Type:</strong> `function`\r\n     * \r\n     * Change menu's title\r\n     * @memberof Menu\r\n     * @access public\r\n     * @param {Menu} menu Menu\r\n     * @param {string} title Title of menu\r\n     * @example\r\n     * local menu = MenuV:CreateMenu('MenuV', 'Welcome to MenuV', 'topleft', 255, 0, 0, 'size-125', 'example', 'menuv', 'example_namespace', 'native')\r\n     * \r\n     * menu:SetTitle('Example Title')\r\n     */",
+        "meta": {
+          "range": [
+            11291,
+            11315
+          ],
+          "filename": "menu.js",
+          "lineno": 374,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\menus",
+          "code": {
+            "id": "astnode100000620",
+            "name": "Menu#SetTitle",
+            "type": "MethodDefinition",
+            "paramnames": [
+              "menu",
+              "title"
+            ]
+          },
+          "vars": {
+            "": null
+          }
+        },
+        "description": "<strong>Type:</strong> `function`\r\rChange menu's title",
+        "memberof": "Menu",
+        "access": "public",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "Menu"
+              ]
+            },
+            "description": "Menu",
+            "name": "menu"
+          },
+          {
+            "type": {
+              "names": [
+                "string"
+              ]
+            },
+            "description": "Title of menu",
+            "name": "title"
+          }
+        ],
+        "examples": [
+          "local menu = MenuV:CreateMenu('MenuV', 'Welcome to MenuV', 'topleft', 255, 0, 0, 'size-125', 'example', 'menuv', 'example_namespace', 'native')\r\rmenu:SetTitle('Example Title')"
+        ],
+        "name": "SetTitle",
+        "longname": "Menu#SetTitle",
+        "kind": "function",
+        "scope": "instance",
+        "$longname": "Menu#SetTitle",
+        "$kind": "method",
+        "$docmaLink": "api/#Menu#SetTitle"
+      },
+      {
+        "comment": "/**\r\n     * <strong>Type:</strong> `function`\r\n     * \r\n     * Transform {@link #Menu|Menu} to `table`\r\n     * @memberof Menu\r\n     * @access public\r\n     * @param {Menu} menu Menu\r\n     * @example\r\n     * local menu = MenuV:CreateMenu('MenuV', 'Welcome to MenuV', 'topleft', 255, 0, 0, 'size-125', 'example', 'menuv', 'example_namespace', 'native')\r\n     * \r\n     * local menuData = menu:ToTable()\r\n     */",
+        "meta": {
+          "range": [
+            14340,
+            14356
+          ],
+          "filename": "menu.js",
+          "lineno": 469,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\menus",
+          "code": {
+            "id": "astnode100000654",
+            "name": "Menu#ToTable",
+            "type": "MethodDefinition",
+            "paramnames": [
+              "menu"
+            ]
+          },
+          "vars": {
+            "": null
+          }
+        },
+        "description": "<strong>Type:</strong> `function`\r\rTransform {@link #Menu|Menu} to `table`",
+        "memberof": "Menu",
+        "access": "public",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "Menu"
+              ]
+            },
+            "description": "Menu",
+            "name": "menu"
+          }
+        ],
+        "examples": [
+          "local menu = MenuV:CreateMenu('MenuV', 'Welcome to MenuV', 'topleft', 255, 0, 0, 'size-125', 'example', 'menuv', 'example_namespace', 'native')\r\rlocal menuData = menu:ToTable()"
+        ],
+        "name": "ToTable",
+        "longname": "Menu#ToTable",
+        "kind": "function",
+        "scope": "instance",
+        "$longname": "Menu#ToTable",
+        "$kind": "method",
+        "$docmaLink": "api/#Menu#ToTable"
+      },
+      {
+        "comment": "/**\r\n     * <strong>Type:</strong> `table`\r\n     * \r\n     * Menu primary color as <strong>RGB</strong>\r\n     * @memberof Menu\r\n     * @access public\r\n     * @type {table}\r\n     * @default { R=0, G=0, B=255 }\r\n     */",
+        "meta": {
+          "range": [
+            2576,
+            3428
+          ],
+          "filename": "menu.js",
+          "lineno": 110,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\menus",
+          "code": {
+            "id": "astnode100000540",
+            "name": "Color",
+            "type": "ClassProperty"
+          }
+        },
+        "description": "<strong>Type:</strong> `table`\r\rMenu primary color as <strong>RGB</strong>",
+        "memberof": "Menu",
+        "access": "public",
         "type": {
           "names": [
             "table"
           ]
         },
-        "optional": true,
-        "defaultvalue": "{}",
-        "description": "Custom events to add",
-        "name": "options.events"
+        "defaultvalue": "{ R=0, G=0, B=255 }",
+        "name": "Color",
+        "longname": "Menu.Color",
+        "kind": "member",
+        "scope": "static",
+        "$longname": "Menu.Color",
+        "$kind": "property",
+        "$docmaLink": "api/#Menu.Color",
+        "$members": [
+          {
+            "comment": "/**\r\n         * <strong>Type:</strong> `number`\r\n         * \r\n         * Primary color <strong>RGB</strong> blue channel [0-255]\r\n         * @memberof Menu.Color\r\n         * @access public\r\n         * @type {number}\r\n         * @default 255\r\n         */",
+            "meta": {
+              "range": [
+                3414,
+                3420
+              ],
+              "filename": "menu.js",
+              "lineno": 142,
+              "columnno": 8,
+              "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\menus",
+              "code": {
+                "id": "astnode100000546",
+                "name": "B",
+                "type": "Literal",
+                "value": 255
+              }
+            },
+            "description": "<strong>Type:</strong> `number`\r\rPrimary color <strong>RGB</strong> blue channel [0-255]",
+            "memberof": "Menu.Color",
+            "access": "public",
+            "type": {
+              "names": [
+                "number"
+              ]
+            },
+            "defaultvalue": "255",
+            "name": "B",
+            "longname": "Menu.Color.B",
+            "kind": "member",
+            "scope": "static",
+            "$longname": "Menu.Color.B",
+            "$kind": "property",
+            "$docmaLink": "api/#Menu.Color.B"
+          },
+          {
+            "comment": "/**\r\n         * <strong>Type:</strong> `number`\r\n         * \r\n         * Primary color <strong>RGB</strong> green channel [0-255]\r\n         * @memberof Menu.Color\r\n         * @access public\r\n         * @type {number}\r\n         * @default 0\r\n         */",
+            "meta": {
+              "range": [
+                3134,
+                3138
+              ],
+              "filename": "menu.js",
+              "lineno": 131,
+              "columnno": 8,
+              "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\menus",
+              "code": {
+                "id": "astnode100000544",
+                "name": "G",
+                "type": "Literal",
+                "value": 0
+              }
+            },
+            "description": "<strong>Type:</strong> `number`\r\rPrimary color <strong>RGB</strong> green channel [0-255]",
+            "memberof": "Menu.Color",
+            "access": "public",
+            "type": {
+              "names": [
+                "number"
+              ]
+            },
+            "defaultvalue": "0",
+            "name": "G",
+            "longname": "Menu.Color.G",
+            "kind": "member",
+            "scope": "static",
+            "$longname": "Menu.Color.G",
+            "$kind": "property",
+            "$docmaLink": "api/#Menu.Color.G"
+          },
+          {
+            "comment": "/**\r\n         * <strong>Type:</strong> `number`\r\n         * \r\n         * Primary color <strong>RGB</strong> red channel [0-255]\r\n         * @memberof Menu.Color\r\n         * @access public\r\n         * @type {number}\r\n         * @default 0\r\n         */",
+            "meta": {
+              "range": [
+                2855,
+                2859
+              ],
+              "filename": "menu.js",
+              "lineno": 120,
+              "columnno": 8,
+              "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\menus",
+              "code": {
+                "id": "astnode100000542",
+                "name": "R",
+                "type": "Literal",
+                "value": 0
+              }
+            },
+            "description": "<strong>Type:</strong> `number`\r\rPrimary color <strong>RGB</strong> red channel [0-255]",
+            "memberof": "Menu.Color",
+            "access": "public",
+            "type": {
+              "names": [
+                "number"
+              ]
+            },
+            "defaultvalue": "0",
+            "name": "R",
+            "longname": "Menu.Color.R",
+            "kind": "member",
+            "scope": "static",
+            "$longname": "Menu.Color.R",
+            "$kind": "property",
+            "$docmaLink": "api/#Menu.Color.R"
+          }
+        ]
       },
       {
+        "comment": "/**\r\n     * <strong>Type:</strong> `string`\r\n     * \r\n     * Texture dictionary name for the banner image\r\n     * @memberof Menu\r\n     * @access public\r\n     * @type {string}\r\n     * @default 'menuv'\r\n     */",
+        "meta": {
+          "range": [
+            4001,
+            4017
+          ],
+          "filename": "menu.js",
+          "lineno": 170,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\menus",
+          "code": {
+            "id": "astnode100000550",
+            "name": "Dictionary",
+            "type": "ClassProperty"
+          }
+        },
+        "description": "<strong>Type:</strong> `string`\r\rTexture dictionary name for the banner image",
+        "memberof": "Menu",
+        "access": "public",
         "type": {
           "names": [
-            "function"
+            "string"
           ]
         },
-        "optional": true,
-        "defaultvalue": "nil",
-        "description": "Custom {@link #Menu.Validate|Menu.Validate} function",
-        "name": "options.validate"
+        "defaultvalue": "'menuv'",
+        "name": "Dictionary",
+        "longname": "Menu.Dictionary",
+        "kind": "member",
+        "scope": "static",
+        "$longname": "Menu.Dictionary",
+        "$kind": "property",
+        "$docmaLink": "api/#Menu.Dictionary"
       },
       {
+        "comment": "/**\r\n     * <strong>Type:</strong> `string`\r\n     * \r\n     * Menu \"open\" state\r\n     * @memberof Menu\r\n     * @access public\r\n     * @type {boolean}\r\n     * @readonly\r\n     * @default false\r\n     */",
+        "meta": {
+          "range": [
+            1224,
+            1239
+          ],
+          "filename": "menu.js",
+          "lineno": 50,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\menus",
+          "code": {
+            "id": "astnode100000530",
+            "name": "IsOpen",
+            "type": "ClassProperty"
+          }
+        },
+        "description": "<strong>Type:</strong> `string`\r\rMenu \"open\" state",
+        "memberof": "Menu",
+        "access": "public",
         "type": {
           "names": [
-            "function"
+            "boolean"
           ]
         },
-        "optional": true,
-        "defaultvalue": "nil",
-        "description": "Custom {@link #Menu.NewIndex|Menu.NewIndex} function",
-        "name": "options.newIndex"
+        "readonly": true,
+        "defaultvalue": "false",
+        "name": "IsOpen",
+        "longname": "Menu.IsOpen",
+        "kind": "member",
+        "scope": "static",
+        "$longname": "Menu.IsOpen",
+        "$kind": "property",
+        "$docmaLink": "api/#Menu.IsOpen"
+      },
+      {
+        "comment": "/**\r\n     * <strong>Type:</strong> `string`\r\n     * \r\n     * Namespace is required to set keybinds, make sure given namespace is unique for every menu.\r\n     * @memberof Menu\r\n     * @access public\r\n     * @type {string}\r\n     * @readonly\r\n     * @default 'unknown'\r\n     */",
+        "meta": {
+          "range": [
+            990,
+            1012
+          ],
+          "filename": "menu.js",
+          "lineno": 38,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\menus",
+          "code": {
+            "id": "astnode100000528",
+            "name": "Namespace",
+            "type": "ClassProperty"
+          }
+        },
+        "description": "<strong>Type:</strong> `string`\r\rNamespace is required to set keybinds, make sure given namespace is unique for every menu.",
+        "memberof": "Menu",
+        "access": "public",
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "readonly": true,
+        "defaultvalue": "'unknown'",
+        "name": "Namespace",
+        "longname": "Menu.Namespace",
+        "kind": "member",
+        "scope": "static",
+        "$longname": "Menu.Namespace",
+        "$kind": "property",
+        "$docmaLink": "api/#Menu.Namespace"
+      },
+      {
+        "comment": "/**\r\n     * <strong>Type:</strong> `string`\r\n     * \r\n     * Menu position on screen\r\n     * \r\n     * \r\n     * <strong>options:</strong> \r\n     * \r\n     * `topleft` | `topcenter` | `topright` | `centerleft` | `center` | `centerright` | `bottomleft` | `bottomcenter` | `bottomright`\r\n     * @memberof Menu\r\n     * @access public\r\n     * @type {string}\r\n     * @default 'topleft'\r\n     */",
+        "meta": {
+          "range": [
+            2332,
+            2346
+          ],
+          "filename": "menu.js",
+          "lineno": 99,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\menus",
+          "code": {
+            "id": "astnode100000538",
+            "name": "Position",
+            "type": "ClassProperty"
+          }
+        },
+        "description": "<strong>Type:</strong> `string`\r\rMenu position on screen\r\r\r<strong>options:</strong> \r\r`topleft` | `topcenter` | `topright` | `centerleft` | `center` | `centerright` | `bottomleft` | `bottomcenter` | `bottomright`",
+        "memberof": "Menu",
+        "access": "public",
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "defaultvalue": "'topleft'",
+        "name": "Position",
+        "longname": "Menu.Position",
+        "kind": "member",
+        "scope": "static",
+        "$longname": "Menu.Position",
+        "$kind": "property",
+        "$docmaLink": "api/#Menu.Position"
+      },
+      {
+        "comment": "/**\r\n     * <strong>Type:</strong> `string`\r\n     * \r\n     * Menu size in %\r\n     * \r\n     * \r\n     * <strong>options:</strong> \r\n     * \r\n     * `size-100` | `size-110` | `size-125` | `size-150` | `size-175` | `size-200`\r\n     * @memberof Menu\r\n     * @access public\r\n     * @type {string}\r\n     * @default 'size-110'\r\n     */",
+        "meta": {
+          "range": [
+            3769,
+            3779
+          ],
+          "filename": "menu.js",
+          "lineno": 159,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\menus",
+          "code": {
+            "id": "astnode100000548",
+            "name": "Size",
+            "type": "ClassProperty"
+          }
+        },
+        "description": "<strong>Type:</strong> `string`\r\rMenu size in %\r\r\r<strong>options:</strong> \r\r`size-100` | `size-110` | `size-125` | `size-150` | `size-175` | `size-200`",
+        "memberof": "Menu",
+        "access": "public",
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "defaultvalue": "'size-110'",
+        "name": "Size",
+        "longname": "Menu.Size",
+        "kind": "member",
+        "scope": "static",
+        "$longname": "Menu.Size",
+        "$kind": "property",
+        "$docmaLink": "api/#Menu.Size"
+      },
+      {
+        "comment": "/**\r\n     * <strong>Type:</strong> `string`\r\n     * \r\n     * Subtitle that appears in capital letters in a small black bar.\r\n     * @memberof Menu\r\n     * @access public\r\n     * @type {string}\r\n     * @default ''\r\n     */",
+        "meta": {
+          "range": [
+            1918,
+            1932
+          ],
+          "filename": "menu.js",
+          "lineno": 83,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\menus",
+          "code": {
+            "id": "astnode100000536",
+            "name": "Subtitle",
+            "type": "ClassProperty"
+          }
+        },
+        "description": "<strong>Type:</strong> `string`\r\rSubtitle that appears in capital letters in a small black bar.",
+        "memberof": "Menu",
+        "access": "public",
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "defaultvalue": "''",
+        "name": "Subtitle",
+        "longname": "Menu.Subtitle",
+        "kind": "member",
+        "scope": "static",
+        "$longname": "Menu.Subtitle",
+        "$kind": "property",
+        "$docmaLink": "api/#Menu.Subtitle"
+      },
+      {
+        "comment": "/**\r\n     * <strong>Type:</strong> `string`\r\n     * \r\n     * Texture name for the banner image\r\n     * @memberof Menu\r\n     * @access public\r\n     * @type {string}\r\n     * @default 'default'\r\n     */",
+        "meta": {
+          "range": [
+            4230,
+            4243
+          ],
+          "filename": "menu.js",
+          "lineno": 181,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\menus",
+          "code": {
+            "id": "astnode100000552",
+            "name": "Texture",
+            "type": "ClassProperty"
+          }
+        },
+        "description": "<strong>Type:</strong> `string`\r\rTexture name for the banner image",
+        "memberof": "Menu",
+        "access": "public",
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "defaultvalue": "'default'",
+        "name": "Texture",
+        "longname": "Menu.Texture",
+        "kind": "member",
+        "scope": "static",
+        "$longname": "Menu.Texture",
+        "$kind": "property",
+        "$docmaLink": "api/#Menu.Texture"
+      },
+      {
+        "comment": "/**\r\n     * <strong>Type:</strong> `string`\r\n     * \r\n     * Change the look of MenuV by changing the theme\r\n     * \r\n     * <strong>Default:</strong> https://i.imgur.com/xGagIBm.png\r\n     * \r\n     * <strong>Native:</strong> https://i.imgur.com/KSkeiQm.png\r\n     * @memberof Menu\r\n     * @access public\r\n     * @type {string}\r\n     * @readonly\r\n     * @default 'default'\r\n     */",
+        "meta": {
+          "range": [
+            684,
+            702
+          ],
+          "filename": "menu.js",
+          "lineno": 26,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\menus",
+          "code": {
+            "id": "astnode100000526",
+            "name": "Theme",
+            "type": "ClassProperty"
+          }
+        },
+        "description": "<strong>Type:</strong> `string`\r\rChange the look of MenuV by changing the theme\r\r<strong>Default:</strong> https://i.imgur.com/xGagIBm.png\r\r<strong>Native:</strong> https://i.imgur.com/KSkeiQm.png",
+        "memberof": "Menu",
+        "access": "public",
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "readonly": true,
+        "defaultvalue": "'default'",
+        "name": "Theme",
+        "longname": "Menu.Theme",
+        "kind": "member",
+        "scope": "static",
+        "$longname": "Menu.Theme",
+        "$kind": "property",
+        "$docmaLink": "api/#Menu.Theme"
+      },
+      {
+        "comment": "/**\r\n     * <strong>Type:</strong> `string`\r\n     * \r\n     * Title that appears on the big banner.\r\n     * @memberof Menu\r\n     * @access public\r\n     * @type {string}\r\n     * @default 'MenuV'\r\n     */",
+        "meta": {
+          "range": [
+            1672,
+            1683
+          ],
+          "filename": "menu.js",
+          "lineno": 72,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\menus",
+          "code": {
+            "id": "astnode100000534",
+            "name": "Title",
+            "type": "ClassProperty"
+          }
+        },
+        "description": "<strong>Type:</strong> `string`\r\rTitle that appears on the big banner.",
+        "memberof": "Menu",
+        "access": "public",
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "defaultvalue": "'MenuV'",
+        "name": "Title",
+        "longname": "Menu.Title",
+        "kind": "member",
+        "scope": "static",
+        "$longname": "Menu.Title",
+        "$kind": "property",
+        "$docmaLink": "api/#Menu.Title"
+      },
+      {
+        "comment": "/**\r\n     * <strong>Type:</strong> `string`\r\n     * \r\n     * Universally Unique Identifier (UUID) \r\n     * @memberof Menu\r\n     * @access public\r\n     * @type {string}\r\n     * @readonly\r\n     */",
+        "meta": {
+          "range": [
+            1447,
+            1457
+          ],
+          "filename": "menu.js",
+          "lineno": 61,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\menus",
+          "code": {
+            "id": "astnode100000532",
+            "name": "UUID",
+            "type": "ClassProperty"
+          }
+        },
+        "description": "<strong>Type:</strong> `string`\r\rUniversally Unique Identifier (UUID)",
+        "memberof": "Menu",
+        "access": "public",
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "readonly": true,
+        "name": "UUID",
+        "longname": "Menu.UUID",
+        "kind": "member",
+        "scope": "static",
+        "$longname": "Menu.UUID",
+        "$kind": "property",
+        "$docmaLink": "api/#Menu.UUID"
+      },
+      {
+        "comment": "/**\r\n * CreateMenu options\r\n * \r\n * @access public\r\n * @memberof Menu\r\n * @typedef {object} Menu~options\r\n * \r\n * @param {string} [options.namespace=unknown]\r\n *        Namespace is required to set keybinds, make sure given namespace is unique for every menu.\r\n * @param {boolean|string} [options.title=MenuV]\r\n *        Title that appears on the big banner.\r\n * @param {string} [options.subtitle=\"\"]\r\n *        Subtitle that appears in capital letters in a small black bar.\r\n * @param {string} [options.position=\"topleft\"]\r\n *        Menu position on screen\r\n *         \r\n *         \r\n *        <strong>options:</strong> \r\n * \r\n *        `topleft` | `topcenter` | `topright` | `centerleft` | `center` | `centerright` | `bottomleft` | `bottomcenter` | `bottomright`\r\n * @param {number} [options.r=0]\r\n *        Primary color `RGB` red channel [0-255]\r\n * @param {number} [options.g=0]\r\n *        Primary color `RGB` green channel [0-255]\r\n * @param {number} [options.b=255]\r\n *        Primary color `RGB` blue channel [0-255]\r\n * @param {string} [options.size=size-110]\r\n *        Menu size in %\r\n * \r\n * \r\n *        <strong>options:</strong> \r\n * \r\n *        `size-100` | `size-110` | `size-125` | `size-150` | `size-175` | `size-200`\r\n * @param {string} [options.dictionary=menuv]\r\n *        Texture dictionary name for the banner image\r\n * @param {string} [options.texture=default]\r\n *        Texture name for the banner image\r\n * @param {table} [options.events={}]\r\n *        Custom events to add\r\n * @param {function} [options.validate=nil]\r\n *        Custom {@link #Menu.Validate|Menu.Validate} function\r\n * @param {function} [options.newIndex=nil]\r\n *             Custom {@link #Menu.NewIndex|Menu.NewIndex} function\r\n */",
+        "meta": {
+          "filename": "menuv.js",
+          "lineno": 12,
+          "columnno": 0,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src",
+          "code": {}
+        },
+        "description": "CreateMenu options",
+        "access": "public",
+        "memberof": "Menu",
+        "kind": "typedef",
+        "name": "options",
+        "type": {
+          "names": [
+            "object"
+          ]
+        },
+        "params": [
+          {
+            "type": {
+              "names": [
+                "string"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": "unknown",
+            "description": "Namespace is required to set keybinds, make sure given namespace is unique for every menu.",
+            "name": "options.namespace"
+          },
+          {
+            "type": {
+              "names": [
+                "boolean",
+                "string"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": "MenuV",
+            "description": "Title that appears on the big banner.",
+            "name": "options.title"
+          },
+          {
+            "type": {
+              "names": [
+                "string"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": "\"\"",
+            "description": "Subtitle that appears in capital letters in a small black bar.",
+            "name": "options.subtitle"
+          },
+          {
+            "type": {
+              "names": [
+                "string"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": "\"topleft\"",
+            "description": "Menu position on screen\r        \r        \r       <strong>options:</strong> \r\r       `topleft` | `topcenter` | `topright` | `centerleft` | `center` | `centerright` | `bottomleft` | `bottomcenter` | `bottomright`",
+            "name": "options.position"
+          },
+          {
+            "type": {
+              "names": [
+                "number"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": 0,
+            "description": "Primary color `RGB` red channel [0-255]",
+            "name": "options.r"
+          },
+          {
+            "type": {
+              "names": [
+                "number"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": 0,
+            "description": "Primary color `RGB` green channel [0-255]",
+            "name": "options.g"
+          },
+          {
+            "type": {
+              "names": [
+                "number"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": 255,
+            "description": "Primary color `RGB` blue channel [0-255]",
+            "name": "options.b"
+          },
+          {
+            "type": {
+              "names": [
+                "string"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": "size-110",
+            "description": "Menu size in %\r\r\r       <strong>options:</strong> \r\r       `size-100` | `size-110` | `size-125` | `size-150` | `size-175` | `size-200`",
+            "name": "options.size"
+          },
+          {
+            "type": {
+              "names": [
+                "string"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": "menuv",
+            "description": "Texture dictionary name for the banner image",
+            "name": "options.dictionary"
+          },
+          {
+            "type": {
+              "names": [
+                "string"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": "default",
+            "description": "Texture name for the banner image",
+            "name": "options.texture"
+          },
+          {
+            "type": {
+              "names": [
+                "table"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": "{}",
+            "description": "Custom events to add",
+            "name": "options.events"
+          },
+          {
+            "type": {
+              "names": [
+                "function"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": "nil",
+            "description": "Custom {@link #Menu.Validate|Menu.Validate} function",
+            "name": "options.validate"
+          },
+          {
+            "type": {
+              "names": [
+                "function"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": "nil",
+            "description": "Custom {@link #Menu.NewIndex|Menu.NewIndex} function",
+            "name": "options.newIndex"
+          }
+        ],
+        "longname": "Menu~options",
+        "scope": "inner",
+        "$longname": "Menu~options",
+        "$kind": "typedef",
+        "$docmaLink": "api/#Menu~options"
+      },
+      {
+        "comment": "/**\r\n * <strong>Type:</strong> `event`\r\n * \r\n * Event will be triggered when menu is closed\r\n * @memberof Menu\r\n * @access public\r\n * @this Menu\r\n * @event Menu#close\r\n * @param {Menu} menu Current closed menu\r\n * @example\r\nmenu:On('close', function(menu)\r\n    print('You have now closed the menu :)')\r\nend)\r\n */",
+        "meta": {
+          "filename": "menu.js",
+          "lineno": 675,
+          "columnno": 0,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\menus",
+          "code": {}
+        },
+        "description": "<strong>Type:</strong> `event`\r\rEvent will be triggered when menu is closed",
+        "memberof": "Menu",
+        "access": "public",
+        "this": "Menu",
+        "kind": "event",
+        "name": "close",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "Menu"
+              ]
+            },
+            "description": "Current closed menu",
+            "name": "menu"
+          }
+        ],
+        "examples": [
+          "menu:On('close', function(menu)\r\n    print('You have now closed the menu :)')\r\nend)"
+        ],
+        "longname": "Menu#event:close",
+        "scope": "instance",
+        "$longname": "Menu#event:close",
+        "$kind": "event",
+        "$docmaLink": "api/#Menu#event:close"
+      },
+      {
+        "comment": "/**\r\n * <strong>Type:</strong> `event`\r\n * \r\n * Event will be triggered when menu is opened\r\n * @memberof Menu\r\n * @access public\r\n * @this Menu\r\n * @event Menu#open\r\n * @param {Menu} menu Current opened menu\r\n * @example\r\nmenu:On('open', function(menu)\r\n    print('You have now opened the menu :)')\r\nend)\r\n */",
+        "meta": {
+          "filename": "menu.js",
+          "lineno": 659,
+          "columnno": 0,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\menus",
+          "code": {}
+        },
+        "description": "<strong>Type:</strong> `event`\r\rEvent will be triggered when menu is opened",
+        "memberof": "Menu",
+        "access": "public",
+        "this": "Menu",
+        "kind": "event",
+        "name": "open",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "Menu"
+              ]
+            },
+            "description": "Current opened menu",
+            "name": "menu"
+          }
+        ],
+        "examples": [
+          "menu:On('open', function(menu)\r\n    print('You have now opened the menu :)')\r\nend)"
+        ],
+        "longname": "Menu#event:open",
+        "scope": "instance",
+        "$longname": "Menu#event:open",
+        "$kind": "event",
+        "$docmaLink": "api/#Menu#event:open"
       }
+    ]
+  },
+  {
+    "comment": "/**\r\n * Range item for MenuV\r\n * @class\r\n * @implements {Item}\r\n * @extends {Item}\r\n */",
+    "meta": {
+      "range": [
+        123,
+        1778
+      ],
+      "filename": "range.js",
+      "lineno": 9,
+      "columnno": 0,
+      "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+      "code": {
+        "id": "astnode100000367",
+        "name": "RangeItem",
+        "type": "ClassDeclaration",
+        "paramnames": []
+      }
+    },
+    "classdesc": "Range item for MenuV",
+    "kind": "class",
+    "implements": [
+      "Item"
     ],
-    "longname": "Menu~options",
-    "scope": "inner",
-    "$longname": "Menu~options",
-    "$kind": "typedef",
-    "$docmaLink": "api/#Menu~options"
+    "augments": [
+      "Item"
+    ],
+    "name": "RangeItem",
+    "longname": "RangeItem",
+    "scope": "global",
+    "$longname": "RangeItem",
+    "$kind": "class",
+    "$docmaLink": "api/#RangeItem",
+    "$members": [
+      {
+        "comment": "/**\r\n     * <strong>Type:</strong> `function`\r\n     * \r\n     * Change {@link #RangeItem.Max|RangeItem.Max}\r\n     * @param {number} input New maximal value\r\n     */",
+        "meta": {
+          "range": [
+            1753,
+            1774
+          ],
+          "filename": "range.js",
+          "lineno": 83,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {
+            "id": "astnode100000386",
+            "name": "RangeItem#SetMaxValue",
+            "type": "MethodDefinition",
+            "paramnames": [
+              "input"
+            ]
+          },
+          "vars": {
+            "": null
+          }
+        },
+        "description": "<strong>Type:</strong> `function`\r\rChange {@link #RangeItem.Max|RangeItem.Max}",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "number"
+              ]
+            },
+            "description": "New maximal value",
+            "name": "input"
+          }
+        ],
+        "name": "SetMaxValue",
+        "longname": "RangeItem#SetMaxValue",
+        "kind": "function",
+        "memberof": "RangeItem",
+        "scope": "instance",
+        "$longname": "RangeItem#SetMaxValue",
+        "$kind": "method",
+        "$docmaLink": "api/#RangeItem#SetMaxValue"
+      },
+      {
+        "comment": "/**\r\n     * <strong>Type:</strong> `function`\r\n     * \r\n     * Change {@link #RangeItem.Min|RangeItem.Min}\r\n     * @param {number} input New minimal value\r\n     */",
+        "meta": {
+          "range": [
+            1554,
+            1575
+          ],
+          "filename": "range.js",
+          "lineno": 75,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {
+            "id": "astnode100000381",
+            "name": "RangeItem#SetMinValue",
+            "type": "MethodDefinition",
+            "paramnames": [
+              "input"
+            ]
+          },
+          "vars": {
+            "": null
+          }
+        },
+        "description": "<strong>Type:</strong> `function`\r\rChange {@link #RangeItem.Min|RangeItem.Min}",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "number"
+              ]
+            },
+            "description": "New minimal value",
+            "name": "input"
+          }
+        ],
+        "name": "SetMinValue",
+        "longname": "RangeItem#SetMinValue",
+        "kind": "function",
+        "memberof": "RangeItem",
+        "scope": "instance",
+        "$longname": "RangeItem#SetMinValue",
+        "$kind": "method",
+        "$docmaLink": "api/#RangeItem#SetMinValue"
+      },
+      {
+        "comment": "/**\r\n     * <strong>Type:</strong> `number`\r\n     * \r\n     * Maximal possible value\r\n     * @memberof RangeItem\r\n     * @access public\r\n     * @type {number}\r\n     * @default 0\r\n     */",
+        "meta": {
+          "range": [
+            1369,
+            1377
+          ],
+          "filename": "range.js",
+          "lineno": 67,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {
+            "id": "astnode100000379",
+            "name": "Max",
+            "type": "ClassProperty"
+          }
+        },
+        "description": "<strong>Type:</strong> `number`\r\rMaximal possible value",
+        "memberof": "RangeItem",
+        "access": "public",
+        "type": {
+          "names": [
+            "number"
+          ]
+        },
+        "defaultvalue": "0",
+        "name": "Max",
+        "longname": "RangeItem.Max",
+        "kind": "member",
+        "scope": "static",
+        "$longname": "RangeItem.Max",
+        "$kind": "property",
+        "$docmaLink": "api/#RangeItem.Max"
+      },
+      {
+        "comment": "/**\r\n     * <strong>Type:</strong> `number`\r\n     * \r\n     * Minimal possible value\r\n     * @memberof RangeItem\r\n     * @access public\r\n     * @type {number}\r\n     * @default 0\r\n     */",
+        "meta": {
+          "range": [
+            1162,
+            1170
+          ],
+          "filename": "range.js",
+          "lineno": 56,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {
+            "id": "astnode100000377",
+            "name": "Min",
+            "type": "ClassProperty"
+          }
+        },
+        "description": "<strong>Type:</strong> `number`\r\rMinimal possible value",
+        "memberof": "RangeItem",
+        "access": "public",
+        "type": {
+          "names": [
+            "number"
+          ]
+        },
+        "defaultvalue": "0",
+        "name": "Min",
+        "longname": "RangeItem.Min",
+        "kind": "member",
+        "scope": "static",
+        "$longname": "RangeItem.Min",
+        "$kind": "property",
+        "$docmaLink": "api/#RangeItem.Min"
+      },
+      {
+        "comment": "/**\r\n     * <strong>Type:</strong> `number`\r\n     * \r\n     * Value of range item (default lowest possible value)\r\n     * @memberof RangeItem\r\n     * @access public\r\n     * @type {number}\r\n     * @default 0\r\n     */",
+        "meta": {
+          "range": [
+            953,
+            963
+          ],
+          "filename": "range.js",
+          "lineno": 45,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {
+            "id": "astnode100000375",
+            "name": "Value",
+            "type": "ClassProperty"
+          }
+        },
+        "description": "<strong>Type:</strong> `number`\r\rValue of range item (default lowest possible value)",
+        "memberof": "RangeItem",
+        "access": "public",
+        "type": {
+          "names": [
+            "number"
+          ]
+        },
+        "defaultvalue": "0",
+        "name": "Value",
+        "longname": "RangeItem.Value",
+        "kind": "member",
+        "scope": "static",
+        "$longname": "RangeItem.Value",
+        "$kind": "property",
+        "$docmaLink": "api/#RangeItem.Value"
+      },
+      {
+        "comment": "/**\r\n * <strong>Type:</strong> `event`\r\n * \r\n * Event will be triggered when user changed range state\r\n * @memberof RangeItem\r\n * @access public\r\n * @this RangeItem\r\n * @event RangeItem#change\r\n * @param {RangeItem} item Current changed range item\r\n * @param {number} newValue New value of range item\r\n * @param {number} oldValue Previous value of range item\r\n * @example\r\nitem:On('change', function(item, newValue, oldValue)\r\n    print('You have changed them range :)')\r\nend)\r\n */",
+        "meta": {
+          "filename": "range.js",
+          "lineno": 86,
+          "columnno": 0,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {}
+        },
+        "description": "<strong>Type:</strong> `event`\r\rEvent will be triggered when user changed range state",
+        "memberof": "RangeItem",
+        "access": "public",
+        "this": "RangeItem",
+        "kind": "event",
+        "name": "change",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "RangeItem"
+              ]
+            },
+            "description": "Current changed range item",
+            "name": "item"
+          },
+          {
+            "type": {
+              "names": [
+                "number"
+              ]
+            },
+            "description": "New value of range item",
+            "name": "newValue"
+          },
+          {
+            "type": {
+              "names": [
+                "number"
+              ]
+            },
+            "description": "Previous value of range item",
+            "name": "oldValue"
+          }
+        ],
+        "examples": [
+          "item:On('change', function(item, newValue, oldValue)\r\n    print('You have changed them range :)')\r\nend)"
+        ],
+        "longname": "RangeItem#event:change",
+        "scope": "instance",
+        "$longname": "RangeItem#event:change",
+        "$kind": "event",
+        "$docmaLink": "api/#RangeItem#event:change"
+      },
+      {
+        "comment": "/**\r\n * <strong>Type:</strong> `event`\r\n * \r\n * Event will be triggered when item becomes active/selected in NUI\r\n * @access public\r\n * @this Item\r\n * @event Item#enter\r\n * @param {Item} item Current active/selected item\r\n * @example\r\nitem:On('enter', function(item)\r\n    print('You have entered this item :)')\r\nend)\r\n */",
+        "meta": {
+          "filename": "item.js",
+          "lineno": 233,
+          "columnno": 0,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {}
+        },
+        "name": "enter",
+        "longname": "RangeItem#event:enter",
+        "kind": "event",
+        "description": "<strong>Type:</strong> `event`\r\rEvent will be triggered when item becomes active/selected in NUI",
+        "access": "public",
+        "this": "Item",
+        "examples": [
+          "item:On('enter', function(item)\r\n    print('You have entered this item :)')\r\nend)"
+        ],
+        "memberof": "RangeItem",
+        "scope": "instance",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "Item"
+              ]
+            },
+            "description": "Current active/selected item",
+            "name": "item"
+          }
+        ],
+        "inherits": "Item#event:enter",
+        "inherited": true,
+        "implements": [
+          "Item#event:enter"
+        ],
+        "$longname": "RangeItem#event:enter",
+        "$kind": "event",
+        "$docmaLink": "api/#RangeItem#event:enter"
+      },
+      {
+        "comment": "/**\r\n * <strong>Type:</strong> `event`\r\n * \r\n * Event will be triggered when item becomes inactive/unselected in NUI\r\n * @access public\r\n * @this Item\r\n * @event Item#leave\r\n * @param {Item} item Current inactive/unselected item\r\n * @example\r\nitem:On('leave', function(item)\r\n    print('You have unselected this item :(')\r\nend)\r\n */",
+        "meta": {
+          "filename": "item.js",
+          "lineno": 248,
+          "columnno": 0,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {}
+        },
+        "name": "leave",
+        "longname": "RangeItem#event:leave",
+        "kind": "event",
+        "description": "<strong>Type:</strong> `event`\r\rEvent will be triggered when item becomes inactive/unselected in NUI",
+        "access": "public",
+        "this": "Item",
+        "examples": [
+          "item:On('leave', function(item)\r\n    print('You have unselected this item :(')\r\nend)"
+        ],
+        "memberof": "RangeItem",
+        "scope": "instance",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "Item"
+              ]
+            },
+            "description": "Current inactive/unselected item",
+            "name": "item"
+          }
+        ],
+        "inherits": "Item#event:leave",
+        "inherited": true,
+        "implements": [
+          "Item#event:leave"
+        ],
+        "$longname": "RangeItem#event:leave",
+        "$kind": "event",
+        "$docmaLink": "api/#RangeItem#event:leave"
+      },
+      {
+        "comment": "/**\r\n * <strong>Type:</strong> `event`\r\n * \r\n * Event will be triggered when user pressed 'ENTER' in range item\r\n * @memberof RangeItem\r\n * @access public\r\n * @this RangeItem\r\n * @event RangeItem#select\r\n * @param {RangeItem} item Current selected range item\r\n * @param {number} value Value of range item\r\n * @example\r\nitem:On('select', function(item, value)\r\n    print('You have select a range option :)')\r\nend)\r\n */",
+        "meta": {
+          "filename": "range.js",
+          "lineno": 104,
+          "columnno": 0,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {}
+        },
+        "description": "<strong>Type:</strong> `event`\r\rEvent will be triggered when user pressed 'ENTER' in range item",
+        "memberof": "RangeItem",
+        "access": "public",
+        "this": "RangeItem",
+        "kind": "event",
+        "name": "select",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "RangeItem"
+              ]
+            },
+            "description": "Current selected range item",
+            "name": "item"
+          },
+          {
+            "type": {
+              "names": [
+                "number"
+              ]
+            },
+            "description": "Value of range item",
+            "name": "value"
+          }
+        ],
+        "examples": [
+          "item:On('select', function(item, value)\r\n    print('You have select a range option :)')\r\nend)"
+        ],
+        "longname": "RangeItem#event:select",
+        "scope": "instance",
+        "$longname": "RangeItem#event:select",
+        "$kind": "event",
+        "$docmaLink": "api/#RangeItem#event:select"
+      },
+      {
+        "comment": "/**\r\n * <strong>Type:</strong> `event`\r\n * \r\n * Event will be triggered when item's value changed\r\n * @access public\r\n * @this Item\r\n * @event Item#update\r\n * @param {Item} item Current updated item\r\n * @param {string} key Current updated key\r\n * @param {any} value Current updated value\r\n * @param {any} oldValue Previous value\r\n * @example\r\nitem:On('update', function(item, key, value, oldValue)\r\n    print('You have updated this item :)')\r\nend)\r\n */",
+        "meta": {
+          "filename": "item.js",
+          "lineno": 263,
+          "columnno": 0,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {}
+        },
+        "name": "update",
+        "longname": "RangeItem#event:update",
+        "kind": "event",
+        "description": "<strong>Type:</strong> `event`\r\rEvent will be triggered when item's value changed",
+        "access": "public",
+        "this": "Item",
+        "examples": [
+          "item:On('update', function(item, key, value, oldValue)\r\n    print('You have updated this item :)')\r\nend)"
+        ],
+        "memberof": "RangeItem",
+        "scope": "instance",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "Item"
+              ]
+            },
+            "description": "Current updated item",
+            "name": "item"
+          },
+          {
+            "type": {
+              "names": [
+                "string"
+              ]
+            },
+            "description": "Current updated key",
+            "name": "key"
+          },
+          {
+            "type": {
+              "names": [
+                "any"
+              ]
+            },
+            "description": "Current updated value",
+            "name": "value"
+          },
+          {
+            "type": {
+              "names": [
+                "any"
+              ]
+            },
+            "description": "Previous value",
+            "name": "oldValue"
+          }
+        ],
+        "inherits": "Item#event:update",
+        "inherited": true,
+        "implements": [
+          "Item#event:update"
+        ],
+        "$longname": "RangeItem#event:update",
+        "$kind": "event",
+        "$docmaLink": "api/#RangeItem#event:update"
+      }
+    ]
+  },
+  {
+    "comment": "/**\r\n * Slider item for MenuV\r\n * @class\r\n * @implements {Item}\r\n * @extends {Item}\r\n */",
+    "meta": {
+      "range": [
+        124,
+        2422
+      ],
+      "filename": "slider.js",
+      "lineno": 9,
+      "columnno": 0,
+      "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+      "code": {
+        "id": "astnode100000425",
+        "name": "SliderItem",
+        "type": "ClassDeclaration",
+        "paramnames": []
+      }
+    },
+    "classdesc": "Slider item for MenuV",
+    "kind": "class",
+    "implements": [
+      "Item"
+    ],
+    "augments": [
+      "Item"
+    ],
+    "name": "SliderItem",
+    "longname": "SliderItem",
+    "scope": "global",
+    "$longname": "SliderItem",
+    "$kind": "class",
+    "$docmaLink": "api/#SliderItem",
+    "$members": [
+      {
+        "comment": "/**\r\n     * <strong>Type:</strong> `function`\r\n     * \r\n     * Add a value to slider\r\n     * @memberof SliderItem\r\n     * @access public\r\n     * @this SliderItem\r\n     * @param {SliderItem} item {@link #SliderItem|SliderItem} to add a value for\r\n     * @param {table} value\r\n     * Value information\r\n     *        @param {string} [value.label='Value']\r\n     *        Label of value item\r\n     *        @param {string} [value.description='']\r\n     *        Description of value item\r\n     *        @param {any} [value.value=null]\r\n     *        Value of value item\r\n     */",
+        "meta": {
+          "range": [
+            1768,
+            1792
+          ],
+          "filename": "slider.js",
+          "lineno": 75,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {
+            "id": "astnode100000437",
+            "name": "SliderItem#AddValue",
+            "type": "MethodDefinition",
+            "paramnames": [
+              "item",
+              "value"
+            ]
+          },
+          "vars": {
+            "": null
+          }
+        },
+        "description": "<strong>Type:</strong> `function`\r\rAdd a value to slider",
+        "memberof": "SliderItem",
+        "access": "public",
+        "this": "SliderItem",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "SliderItem"
+              ]
+            },
+            "description": "{@link #SliderItem|SliderItem} to add a value for",
+            "name": "item"
+          },
+          {
+            "type": {
+              "names": [
+                "table"
+              ]
+            },
+            "description": "Value information",
+            "name": "value"
+          },
+          {
+            "type": {
+              "names": [
+                "string"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": "'Value'",
+            "description": "Label of value item",
+            "name": "value.label"
+          },
+          {
+            "type": {
+              "names": [
+                "string"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": "''",
+            "description": "Description of value item",
+            "name": "value.description"
+          },
+          {
+            "type": {
+              "names": [
+                "any"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": null,
+            "description": "Value of value item",
+            "name": "value.value"
+          }
+        ],
+        "name": "AddValue",
+        "longname": "SliderItem#AddValue",
+        "kind": "function",
+        "scope": "instance",
+        "$longname": "SliderItem#AddValue",
+        "$kind": "method",
+        "$docmaLink": "api/#SliderItem#AddValue"
+      },
+      {
+        "comment": "/**\r\n     * <strong>Type:</strong> `function`\r\n     * \r\n     * Add a list of values to slider\r\n     * @memberof SliderItem\r\n     * @access public\r\n     * @this SliderItem\r\n     * @param {SliderItem} item {@link #SliderItem|SliderItem} to add values for\r\n     * @param {table} values\r\n     * Value information\r\n     *        @param {string} [value.label='Value']\r\n     *        Label of value item\r\n     *        @param {string} [value.description='']\r\n     *        Description of value item\r\n     *        @param {any} [value.value=null]\r\n     *        Value of value item\r\n     */",
+        "meta": {
+          "range": [
+            2389,
+            2418
+          ],
+          "filename": "slider.js",
+          "lineno": 94,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {
+            "id": "astnode100000443",
+            "name": "SliderItem#AddValues",
+            "type": "MethodDefinition",
+            "paramnames": [
+              "item",
+              "values"
+            ]
+          },
+          "vars": {
+            "": null
+          }
+        },
+        "description": "<strong>Type:</strong> `function`\r\rAdd a list of values to slider",
+        "memberof": "SliderItem",
+        "access": "public",
+        "this": "SliderItem",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "SliderItem"
+              ]
+            },
+            "description": "{@link #SliderItem|SliderItem} to add values for",
+            "name": "item"
+          },
+          {
+            "type": {
+              "names": [
+                "table"
+              ]
+            },
+            "description": "Value information",
+            "name": "values",
+            "variable": true
+          },
+          {
+            "type": {
+              "names": [
+                "string"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": "'Value'",
+            "description": "Label of value item",
+            "name": "value.label"
+          },
+          {
+            "type": {
+              "names": [
+                "string"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": "''",
+            "description": "Description of value item",
+            "name": "value.description"
+          },
+          {
+            "type": {
+              "names": [
+                "any"
+              ]
+            },
+            "optional": true,
+            "defaultvalue": null,
+            "description": "Value of value item",
+            "name": "value.value"
+          }
+        ],
+        "name": "AddValues",
+        "longname": "SliderItem#AddValues",
+        "kind": "function",
+        "scope": "instance",
+        "$longname": "SliderItem#AddValues",
+        "$kind": "method",
+        "$docmaLink": "api/#SliderItem#AddValues"
+      },
+      {
+        "comment": "/**\r\n     * <strong>Type:</strong> `number`\r\n     * \r\n     * Value of slider item (current selected index)\r\n     * @memberof SliderItem\r\n     * @access public\r\n     * @type {number}\r\n     * @default 1\r\n     */",
+        "meta": {
+          "range": [
+            958,
+            968
+          ],
+          "filename": "slider.js",
+          "lineno": 45,
+          "columnno": 4,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {
+            "id": "astnode100000433",
+            "name": "Value",
+            "type": "ClassProperty"
+          }
+        },
+        "description": "<strong>Type:</strong> `number`\r\rValue of slider item (current selected index)",
+        "memberof": "SliderItem",
+        "access": "public",
+        "type": {
+          "names": [
+            "number"
+          ]
+        },
+        "defaultvalue": "1",
+        "name": "Value",
+        "longname": "SliderItem.Value",
+        "kind": "member",
+        "scope": "static",
+        "$longname": "SliderItem.Value",
+        "$kind": "property",
+        "$docmaLink": "api/#SliderItem.Value"
+      },
+      {
+        "comment": "/**\r\n * <strong>Type:</strong> `event`\r\n * \r\n * Event will be triggered when user changed slider state\r\n * @memberof SliderItem\r\n * @access public\r\n * @this SliderItem\r\n * @event SliderItem#change\r\n * @param {SliderItem} item Current changed slider item\r\n * @param {number} newValue New index of slider item\r\n * @param {number} oldValue Previous index of slider item\r\n * @example\r\nitem:On('change', function(item, newValue, oldValue)\r\n    print('You have changed them slider :)')\r\nend)\r\n */",
+        "meta": {
+          "filename": "slider.js",
+          "lineno": 97,
+          "columnno": 0,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {}
+        },
+        "description": "<strong>Type:</strong> `event`\r\rEvent will be triggered when user changed slider state",
+        "memberof": "SliderItem",
+        "access": "public",
+        "this": "SliderItem",
+        "kind": "event",
+        "name": "change",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "SliderItem"
+              ]
+            },
+            "description": "Current changed slider item",
+            "name": "item"
+          },
+          {
+            "type": {
+              "names": [
+                "number"
+              ]
+            },
+            "description": "New index of slider item",
+            "name": "newValue"
+          },
+          {
+            "type": {
+              "names": [
+                "number"
+              ]
+            },
+            "description": "Previous index of slider item",
+            "name": "oldValue"
+          }
+        ],
+        "examples": [
+          "item:On('change', function(item, newValue, oldValue)\r\n    print('You have changed them slider :)')\r\nend)"
+        ],
+        "longname": "SliderItem#event:change",
+        "scope": "instance",
+        "$longname": "SliderItem#event:change",
+        "$kind": "event",
+        "$docmaLink": "api/#SliderItem#event:change"
+      },
+      {
+        "comment": "/**\r\n * <strong>Type:</strong> `event`\r\n * \r\n * Event will be triggered when item becomes active/selected in NUI\r\n * @access public\r\n * @this Item\r\n * @event Item#enter\r\n * @param {Item} item Current active/selected item\r\n * @example\r\nitem:On('enter', function(item)\r\n    print('You have entered this item :)')\r\nend)\r\n */",
+        "meta": {
+          "filename": "item.js",
+          "lineno": 233,
+          "columnno": 0,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {}
+        },
+        "name": "enter",
+        "longname": "SliderItem#event:enter",
+        "kind": "event",
+        "description": "<strong>Type:</strong> `event`\r\rEvent will be triggered when item becomes active/selected in NUI",
+        "access": "public",
+        "this": "Item",
+        "examples": [
+          "item:On('enter', function(item)\r\n    print('You have entered this item :)')\r\nend)"
+        ],
+        "memberof": "SliderItem",
+        "scope": "instance",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "Item"
+              ]
+            },
+            "description": "Current active/selected item",
+            "name": "item"
+          }
+        ],
+        "inherits": "Item#event:enter",
+        "inherited": true,
+        "implements": [
+          "Item#event:enter"
+        ],
+        "$longname": "SliderItem#event:enter",
+        "$kind": "event",
+        "$docmaLink": "api/#SliderItem#event:enter"
+      },
+      {
+        "comment": "/**\r\n * <strong>Type:</strong> `event`\r\n * \r\n * Event will be triggered when item becomes inactive/unselected in NUI\r\n * @access public\r\n * @this Item\r\n * @event Item#leave\r\n * @param {Item} item Current inactive/unselected item\r\n * @example\r\nitem:On('leave', function(item)\r\n    print('You have unselected this item :(')\r\nend)\r\n */",
+        "meta": {
+          "filename": "item.js",
+          "lineno": 248,
+          "columnno": 0,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {}
+        },
+        "name": "leave",
+        "longname": "SliderItem#event:leave",
+        "kind": "event",
+        "description": "<strong>Type:</strong> `event`\r\rEvent will be triggered when item becomes inactive/unselected in NUI",
+        "access": "public",
+        "this": "Item",
+        "examples": [
+          "item:On('leave', function(item)\r\n    print('You have unselected this item :(')\r\nend)"
+        ],
+        "memberof": "SliderItem",
+        "scope": "instance",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "Item"
+              ]
+            },
+            "description": "Current inactive/unselected item",
+            "name": "item"
+          }
+        ],
+        "inherits": "Item#event:leave",
+        "inherited": true,
+        "implements": [
+          "Item#event:leave"
+        ],
+        "$longname": "SliderItem#event:leave",
+        "$kind": "event",
+        "$docmaLink": "api/#SliderItem#event:leave"
+      },
+      {
+        "comment": "/**\r\n * <strong>Type:</strong> `event`\r\n * \r\n * Event will be triggered when user pressed 'ENTER' in slider item\r\n * @memberof SliderItem\r\n * @access public\r\n * @this SliderItem\r\n * @event SliderItem#select\r\n * @param {SliderItem} item Current selected slider item\r\n * @param {any} value Value from selected option\r\n * @example\r\nitem:On('select', function(item, value)\r\n    print('You have select a slider option :)')\r\nend)\r\n */",
+        "meta": {
+          "filename": "slider.js",
+          "lineno": 115,
+          "columnno": 0,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {}
+        },
+        "description": "<strong>Type:</strong> `event`\r\rEvent will be triggered when user pressed 'ENTER' in slider item",
+        "memberof": "SliderItem",
+        "access": "public",
+        "this": "SliderItem",
+        "kind": "event",
+        "name": "select",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "SliderItem"
+              ]
+            },
+            "description": "Current selected slider item",
+            "name": "item"
+          },
+          {
+            "type": {
+              "names": [
+                "any"
+              ]
+            },
+            "description": "Value from selected option",
+            "name": "value"
+          }
+        ],
+        "examples": [
+          "item:On('select', function(item, value)\r\n    print('You have select a slider option :)')\r\nend)"
+        ],
+        "longname": "SliderItem#event:select",
+        "scope": "instance",
+        "$longname": "SliderItem#event:select",
+        "$kind": "event",
+        "$docmaLink": "api/#SliderItem#event:select"
+      },
+      {
+        "comment": "/**\r\n * <strong>Type:</strong> `event`\r\n * \r\n * Event will be triggered when item's value changed\r\n * @access public\r\n * @this Item\r\n * @event Item#update\r\n * @param {Item} item Current updated item\r\n * @param {string} key Current updated key\r\n * @param {any} value Current updated value\r\n * @param {any} oldValue Previous value\r\n * @example\r\nitem:On('update', function(item, key, value, oldValue)\r\n    print('You have updated this item :)')\r\nend)\r\n */",
+        "meta": {
+          "filename": "item.js",
+          "lineno": 263,
+          "columnno": 0,
+          "path": "D:\\Downloads\\menuv_docs-master\\menuv_docs\\src\\classes\\items",
+          "code": {}
+        },
+        "name": "update",
+        "longname": "SliderItem#event:update",
+        "kind": "event",
+        "description": "<strong>Type:</strong> `event`\r\rEvent will be triggered when item's value changed",
+        "access": "public",
+        "this": "Item",
+        "examples": [
+          "item:On('update', function(item, key, value, oldValue)\r\n    print('You have updated this item :)')\r\nend)"
+        ],
+        "memberof": "SliderItem",
+        "scope": "instance",
+        "params": [
+          {
+            "type": {
+              "names": [
+                "Item"
+              ]
+            },
+            "description": "Current updated item",
+            "name": "item"
+          },
+          {
+            "type": {
+              "names": [
+                "string"
+              ]
+            },
+            "description": "Current updated key",
+            "name": "key"
+          },
+          {
+            "type": {
+              "names": [
+                "any"
+              ]
+            },
+            "description": "Current updated value",
+            "name": "value"
+          },
+          {
+            "type": {
+              "names": [
+                "any"
+              ]
+            },
+            "description": "Previous value",
+            "name": "oldValue"
+          }
+        ],
+        "inherits": "Item#event:update",
+        "inherited": true,
+        "implements": [
+          "Item#event:update"
+        ],
+        "$longname": "SliderItem#event:update",
+        "$kind": "event",
+        "$docmaLink": "api/#SliderItem#event:update"
+      }
+    ]
   },
   {
     "comment": "/**\r\n * Object\r\n * @typedef {object} table\r\n */",
