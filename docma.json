@@ -83,8 +83,7 @@
         "meta": null,
         "routing": "path",
         "server": "github",
-        "favicon": "./img/favicon.ico",
-        "base": "/docs"
+        "favicon": "./img/favicon.ico"
     },
     "src": [
         "./docs/*.md",
