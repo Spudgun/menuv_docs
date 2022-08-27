@@ -7,7 +7,7 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "node generate_docs.js",
         "pre-deploy": "npm run build",
-        "deploy": "gh-pages -d output/docs"
+        "deploy": "gh-pages -d /docs"
     },
     "repository": {
         "type": "git",

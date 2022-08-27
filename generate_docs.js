@@ -3,11 +3,11 @@ const docma_config = {
     src: [
         './docs/**/*.md'
     ],
-    dest: './output/docs'
+    dest: './docs'
 };
 
 docma.create()
-    .build('./docma_config.json')
+    .build('./docma.json')
     .catch(error => {
         console.log(error);
     })
